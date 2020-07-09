@@ -1,0 +1,7 @@
+input /sublimation; wait 1.5;
+input /stoneskin; wait 10.5;
+input /blink; wait 8.5;
+input /haste; wait 6.5;
+input /auspice; wait 7.5;
+input /boost-str; wait 7;
+send @all /echo WHM REBUFF IS DONE!

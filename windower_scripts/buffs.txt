@@ -1,0 +1,5 @@
+send @all /echo BASE BUFFS FOR RDM + WHM
+wait .3;
+send @whm exec WHMBuffBase;
+wait .3;
+send @rdm exec RDMBuffBase;

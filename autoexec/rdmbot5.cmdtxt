@@ -1,0 +1,480 @@
+Refresh II
+ref2
+False
+Buff
+Refresh II
+refresh2
+False
+Buff
+Haste II
+haste
+False
+Buff
+Haste II
+haste2
+False
+Buff
+Haste II
+h2
+False
+Buff
+Flurry II
+flurry
+False
+Buff
+Flurry II
+flurry2
+False
+Buff
+Cure
+c1
+False
+Buff
+Cure II
+c2
+False
+Buff
+Cure III
+c3
+False
+Buff
+Cure IV
+c4
+False
+Buff
+Haste II
+ahaste
+True
+Buff
+Haste II
+selfhaste
+True
+Buff
+Composure
+comp
+True
+JobAbility
+Saboteur
+sabo
+True
+JobAbility
+Converrt
+conv
+True
+JobAbility
+Cure IV
+ac4
+True
+Buff
+Paralyze II
+para
+False
+MagicAttack
+Dia III
+dia
+False
+MagicAttack
+Accession
+aoe
+False
+JobAbility
+Dispel
+disp
+False
+MagicAttack
+Dispel
+dispel
+False
+MagicAttack
+Haste II
+ah2
+True
+Buff
+Inundation
+ind
+False
+MagicAttack
+Stoneskin
+ss
+True
+Buff
+Refresh II
+aref
+True
+Buff
+Refresh II
+arefresh
+True
+Buff
+Refresh II
+selfrefresh
+True
+Buff
+Inundation
+in
+False
+MagicAttack
+Saboteur
+sab
+True
+JobAbility
+Refresh II
+ref
+False
+Buff
+Slow II
+slow
+False
+MagicAttack
+Cure IV
+acure
+True
+Buff
+Cure IV
+ac
+True
+Buff
+Gain-MND
+mnd
+True
+Buff
+Gain-INT
+int
+True
+Buff
+Aurorastorm
+aurora
+False
+Buff
+Aurorastorm
+astorm
+True
+Buff
+Blind II
+blind
+False
+MagicAttack
+Aero IV
+a4
+False
+MagicAttack
+Blizzard IV
+b4
+False
+MagicAttack
+Fire IV
+f4
+False
+MagicAttack
+Thunder IV
+t4
+False
+MagicAttack
+Water IV
+w4
+False
+MagicAttack
+Stone IV
+s4
+False
+MagicAttack
+Silence
+silence
+False
+MagicAttack
+Silence
+sil
+False
+MagicAttack
+Voidstorm
+void
+False
+Buff
+Phalanx II
+phal2
+False
+Buff
+Bio III
+bio
+False
+MagicAttack
+Bio III
+bio3
+False
+MagicAttack
+Bio III
+bio2
+False
+MagicAttack
+Aurorastorm
+aaurora
+True
+Buff
+Phalanx II
+phal
+False
+Buff
+Phalanx
+aphal
+True
+Buff
+Dia III
+dia3
+False
+MagicAttack
+Poisona
+poisona
+False
+Buff
+Paralyna
+paralyna
+False
+Buff
+Silena
+silena
+False
+Buff
+Reraise
+reraise
+True
+Buff
+Sneak
+sneak
+False
+Buff
+Invisible
+invis
+False
+Buff
+Invisible
+ainvis
+True
+Buff
+Sneak
+asneak
+True
+Buff
+Cursna
+cursna
+False
+Buff
+Viruna
+viruna
+False
+Buff
+Erase
+Erase
+False
+Buff
+Regen II
+regen
+False
+Buff
+Regen II
+aregen
+True
+Buff
+Aspir
+aspir
+False
+MagicAttack
+Frazzle III
+fraz3
+False
+MagicAttack
+Distract III
+dist3
+False
+MagicAttack
+Distract III
+dist
+False
+MagicAttack
+Distract III
+distract
+False
+MagicAttack
+Distract III
+distract3
+False
+MagicAttack
+Frazzle III
+fraz
+False
+MagicAttack
+Frazzle III
+frazzle
+False
+MagicAttack
+Frazzle III
+frazzle3
+False
+MagicAttack
+Addle II
+addle
+False
+MagicAttack
+Addle II
+addle2
+False
+MagicAttack
+Addle II
+add
+False
+MagicAttack
+Aero V
+a5
+False
+MagicAttack
+Blizzard V
+b5
+False
+MagicAttack
+Fire V
+f5
+False
+MagicAttack
+Thunder V
+t5
+False
+MagicAttack
+Water V
+w5
+False
+MagicAttack
+Stone V
+s5
+False
+MagicAttack
+Cursna
+doom
+False
+Buff
+Temper II
+temper
+True
+Buff
+Refresh III
+ref3
+False
+Buff
+Refresh III
+aref3
+True
+Buff
+Temper II
+temp2
+True
+Buff
+Light Arts
+la
+True
+JobAbility
+Reraise
+rr
+True
+JobAbility
+Addendum: White
+addwhite
+True
+JobAbility
+Addendum: Black
+addblack
+True
+JobAbility
+Addendum: White
+white
+True
+JobAbility
+Addendum: Black
+black
+True
+JobAbility
+Barwater
+barwater
+True
+Buff
+Barblizzard
+barblizzard
+True
+Buff
+Baraero
+baraero
+True
+Buff
+Barthunder
+barthunder
+True
+Buff
+Barfire
+barfire
+True
+Buff
+Barstone
+barstone
+True
+Buff
+Phalanx
+aphal1
+True
+Buff
+Protect V
+protect
+False
+Buff
+Stona
+stoned
+False
+Buff
+Stona
+stona
+False
+Buff
+Barwatera
+barwatera
+True
+Buff
+Barstonra
+barstonra
+True
+Buff
+Baraera
+baraera
+True
+Buff
+Barfira
+barfira
+True
+Buff
+Barblizzara
+barblizzara
+True
+Buff
+Barthundra
+barthundra
+True
+Buff
+Shell V
+shell
+False
+Buff
+Curaga II
+cga
+False
+Buff
+Curaga II
+cga2
+False
+Buff
+Curaga II
+acga2
+True
+Buff
+Curaga II
+acga
+True
+Buff
+Curaga II
+curaga
+False
+Buff

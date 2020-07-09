@@ -1,0 +1,5 @@
+input /release; wait 1.0;
+input /garuda; wait 7.0;
+input /pet 'Hastega II'; wait 3.0;
+input /release; wait 1.0;
+input /ifrit;

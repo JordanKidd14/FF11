@@ -1,0 +1,14 @@
+input /light arts; wait 1.5;
+input /composure; wait 1.5;
+input /haste2; wait 6.5;
+input /refresh2; wait 6.5;
+input /stoneskin; wait 6.5;
+input /haste2 Nightsfury; wait 6.5;
+input /blink; wait 6.5;
+input /refresh2 Vretiel; wait 6.5;
+input /aurorastorm; wait 5.5;
+input /haste2 Vretiel; wait 6.5;
+input /accession; wait 1;
+input /phalanx; wait 4;
+input /refresh2 Yoran-Oran; wait 6.5;
+send @all /echo RDM IS DONE!

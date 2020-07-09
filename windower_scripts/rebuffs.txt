@@ -1,0 +1,5 @@
+send @all /echo MINI REBUFFS FOR RDM + WHM
+wait .3;
+send @whm exec WHMRebuffbase;
+wait .3;
+send @rdm exec RDMRebuffbase;

@@ -1,0 +1,1 @@
+send @smn exec SMNHasteBase;

@@ -1,0 +1,14 @@
+input /light arts; wait 1.5;
+input /afflatus solace; wait 1.5;
+input /sublimation; wait 1.5;
+input /reraise3; wait 11.5;
+input /protectra5; wait 5.5;
+input /shellra5; wait 6.5;
+input /stoneskin; wait 10.5;
+input /blink; wait 8.5;
+input /haste; wait 6.5;
+input /barfira; wait 5.5;
+input /barparalyzra; wait 8.5;
+input /auspice; wait 7.5;
+input /aurorastorm; wait 5.5;
+send @all /echo WHM IS DONE!

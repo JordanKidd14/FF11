@@ -1,0 +1,8 @@
+send Nightsfury /echo Running bard fodder songs...;
+/echo Starting fodder songs...;
+/equip Range 'Terpander';
+/victory march; wait 9;
+/mages ballad III; wait 9;
+/armys paeon vi; wait 9;
+/echo Done!;
+send Nightsfury /echo Songs done;

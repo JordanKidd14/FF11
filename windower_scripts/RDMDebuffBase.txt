@@ -1,0 +1,9 @@
+input /saboteur; wait 1.0;
+input /dia3 <bt>; wait 3.5;
+input /frazzle3 <bt>; wait 5;
+input /distract3 <bt>; wait 5;
+input /slow2 <bt>; wait 5;
+input /paralyze2 <bt>; wait 5;
+input /addle2 <bt>; wait 5;
+input /inundation <bt>; wait 5;
+input /blind2 <bt>; wait 5;

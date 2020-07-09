@@ -1,0 +1,9 @@
+input /haste2; wait 6.5;
+input /stoneskin; wait 6.5;
+input /haste2 Nightsfury; wait 6.5;
+input /refresh2 Vretiel; wait 6.5;
+input /haste2 Vretiel; wait 6.5;
+input /accession; wait 1;
+input /phalanx; wait 4;
+input /refresh2 Yoran-Oran; wait 6.5;
+send @all /echo RDM REBUFF IS DONE!
