@@ -252,18 +252,19 @@ function init_gear_sets()
     sets.precast.WS['Victory Smite']   = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Bhikku Cyclas +1",  -- body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+        -- HERC VEST IMP DOWN, EMP+1 body DURING
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
         feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
         neck="Light Gorget",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
-        right_ear="Sherida Earring",
+        right_ear="Sherida Earring", 
         left_ring="Begrudging Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
-        -- CRIT IMP DOWN; DA IMP UP back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+        -- ejin: USE DA CAPE FOR ALL USES
     })
     sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
@@ -579,6 +580,13 @@ function init_gear_sets()
         waist="Ask Sash"
     }
 
+    sets.da_back = {
+        back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
+    }
+    sets.ws_back = {
+        back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+    }
+
     -- KEEP BOOST TP BELT ON DURING BOOST:
     sets.engaged.Boost = set_combine(sets.engaged, sets.boost_gear)
     sets.engaged.Boost.Acc = set_combine(sets.engaged, sets.boost_gear)
@@ -612,9 +620,11 @@ end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
+    if spell.type == 'WeaponSkill' then
         if state.Buff.Impetus then
+            add_to_chat(123, '-- IMPETUS WS SET USED --')
             equip(sets.impetus_body)
+            --equip(sets.da_back)
         end
         -- Replace Moonshade Earring if we're at cap TP
         if player.tp == 3000 then

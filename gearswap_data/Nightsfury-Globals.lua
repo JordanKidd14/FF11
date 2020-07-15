@@ -24,7 +24,7 @@ send_command('bind ^numpad6 send @whm curaga III Nightsfury')
 
 send_command('bind numpad7 send @others follow Nightsfury')
 send_command('bind ^numpad7 send @others /sit')
-send_command('bind numpad9 send @rdm dispel <bt>; send @brd Magic Finale <bt>; send @whm Dia II <bt>; send @rdm Dia III <bt>')
+send_command('bind numpad9 send Nightsfury /echo Dispels; send @rdm dispel <bt>; send @brd Magic Finale <bt>; send @whm Dia II <bt>;')
 function file_unload()
     send_command('unbind numpad1')
     send_command('unbind numpad2')

@@ -103,8 +103,8 @@
         }
 
         sets.midcast.Cure = {
-            main={name="Tamaxchi", priority=1},
-            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=2},
+            main={name="Tamaxchi", priority=2},
+            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=1},
             ammo="Kalboron Stone",
             head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
             body={ name="Chironic Doublet", augments={'Mag. Acc.+20','Magic dmg. taken -3%','Weapon skill damage +5%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
@@ -270,8 +270,8 @@
 
         -- Normal melee group
         sets.engaged = {
-            main="Kaja Knife",
-            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=2},
+            main={ name="Kaja Knife", priority=2},
+            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=1},
             ammo="Kalboron Stone",
             head={ name="Viti. Chapeau +1", augments={'Enfeebling Magic duration','Magic Accuracy',}},
             body="Jhakri Robe +2",
@@ -288,8 +288,8 @@
         }
 
         sets.engaged.Defense = {
-            main="Eletta Sword",
-            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=2},
+            main={ name="Elatta Sword", priority=2},
+            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=1},
             ammo="Kalboron Stone",
             head="Jhakri Coronal +1",
             body="Ayanmo Corazza +2",

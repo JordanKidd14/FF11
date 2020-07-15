@@ -171,8 +171,8 @@ function init_gear_sets()
         --- [] JP [1200]  --5
 
         -- II 9 / 15
-        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=1},  --2
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},  --2
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",  --7
 
         -- I 15 / 15
@@ -262,8 +262,8 @@ function init_gear_sets()
     -- Avatar pact sets.  All pacts are Ability type.
 
     sets.midcast.Pet.BloodPactWard = {  --485
-        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=1},
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head={ name="Psycloth Tiara", augments={'Pet: Attack+17','Pet: "Mag.Atk.Bns."+7','Pet: Enmity+3',}},
         body="Shomonjijoe +1",
@@ -280,8 +280,8 @@ function init_gear_sets()
     }
 
     sets.midcast.Pet.DebuffBloodPactWard = set_combine(sets.midcast.Pet.BloodPactWard, {
-        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=1},
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
         body="Tali'ah Manteel +1",
@@ -300,8 +300,8 @@ function init_gear_sets()
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
 
     sets.midcast.Pet.PhysicalBloodPactRage = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=1},
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head={ name="Apogee Crown +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
         body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
@@ -320,8 +320,8 @@ function init_gear_sets()
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
 
     sets.midcast.Pet.MagicalBloodPactRage = {
-        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=1},
-        sub={name="Elan Strap +1",priority=3},
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head={ name="Apogee Crown +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
         body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
@@ -358,7 +358,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=1, bag="wardrobe1"},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2, bag="wardrobe1"},
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
         --body="Shomonjijoe +1",
@@ -374,7 +374,7 @@ function init_gear_sets()
         right_ring= {name="Varar Ring +1", bag="wardrobe2"},
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
         --back={ name="Mecisto. Mantle", augments={'Cap. Point+38%','Accuracy+4','DEF+4',}},
-        sub={name="Elan Strap +1", priority=2, bag="wardrobe2"},
+        sub={name="Elan Strap +1", priority=1, bag="wardrobe2"},
     }
 
     sets.latent_refresh = {
@@ -405,8 +405,8 @@ function init_gear_sets()
     -- Can make due without either the head or the body, and use +refresh items in those slots.
 
     sets.idle.Avatar = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=1},
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
         body="Tali'ah Manteel +1",
@@ -436,8 +436,8 @@ function init_gear_sets()
 
     -- Used when avatar begins attacking (assualt used):
     sets.idle.Avatar.Melee = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=1},
-        sub={name="Elan Strap +1",priority=2},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2},
+        sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
         body="Tali'ah Manteel +1",

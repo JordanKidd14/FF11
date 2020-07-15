@@ -103,11 +103,11 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	sets.precast.FastCast = {
-		main="Oranyan",
-		sub="Enki Strap",
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 		body="Inyanga Jubbah +1",
-		hands="Inyanga Dastanas +1",
-		legs="Ayanmo Cosciales",
+		hands="Inyanga Dastanas +2",
+		legs="Ayanmo Cosciales +1",
 		waist="Channeler's Stone",
 		left_ring="Ayanmo Ring",
 		left_ear="Aoidos' Earring",
@@ -117,19 +117,21 @@ function init_gear_sets()
     sets.precast.FC = sets.precast.FastCast 
 
     sets.precast.FastCast.Cure = set_combine(sets.precast.FastCast, {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 	})
 
     sets.precast.FastCast.Stoneskin = set_combine(sets.precast.FastCast, { waist="Siegel Sash", })
 
     sets.precast.FastCast['Enhancing Magic'] = set_combine(sets.precast.FastCast, {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 	})
 
     sets.precast.FastCast.BardSong = {
-		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
+		head="Fili Calot +1",
 		body="Inyanga Jubbah +1",
 		waist="Channeler's Stone",
 		left_ear="Aoidos' Earring",
@@ -164,7 +166,7 @@ function init_gear_sets()
 		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
-		legs="Ayanmo Cosciales",
+		legs="Ayanmo Cosciales +1",
 		feet="Aya. Gambieras +2",
 		neck={ name="Bard's Charm +1", augments={'Path: A',}},
 		waist="Grunfeld Rope",
@@ -172,20 +174,21 @@ function init_gear_sets()
 		right_ear="Dawn Earring",
 		left_ring="Apate Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
 		
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-
+		waist="Soil belt",
+		back={ name="Intarabus's Cape", augments={'DEX+10','Accuracy+20 Attack+20','Crit.hit rate+10',}},
 	})
     sets.precast.WS['Rudras Storm'] = set_combine(sets.precast.WS, {
 
 	})
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-
+		waist="Soil belt",
 	})
 	sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
 
@@ -204,19 +207,31 @@ function init_gear_sets()
         
 
     sets.midcast.Ballad = {}
-    sets.midcast.Lullaby = {hands="Brioso Cuffs +3"}
+    sets.midcast.Lullaby = {hands="Brioso Cuffs"}
 	sets.midcast.Madrigal = {
 		head="Fili Calot +1",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
 	}
+	sets.midcast.Etude = {  -- use emp set bonus for extra stats:
+		hands="Fili Manchettes",
+		body="Fili Hongreline",
+		head="Fili Calot +1",
+	}
 	sets.midcast.Prelude = {
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
 	}
-    sets.midcast.March = {hands="Fili Manchettes"}
-	sets.midcast.HonorMarch = {hands="Fili Manchettes", range="Marsyas"}
-    sets.midcast.Minuet = {body="Fili Hongreline +1"}
+    sets.midcast.March = {
+		hands="Fili Manchettes"
+	}
+	sets.midcast.HonorMarch = {
+		hands="Fili Manchettes", 
+		range="Marsyas"
+	}
+    sets.midcast.Minuet = {
+		body="Fili Hongreline"
+	}
     sets.midcast.Minne = {}
-    sets.midcast.Paeon = {head="Brioso Roundlet +3"}
+    sets.midcast.Paeon = {head="Brioso Roundlet"}
     sets.midcast.Carol = {hands="Mousai Gages"}
     sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
     sets.midcast['Magic Finale'] = {legs="Fili Rhingrave +1"}
@@ -232,15 +247,15 @@ function init_gear_sets()
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {
-		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',  priority=1}},
-		sub={ name="Legato Dagger", priority=2},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
 		body="Fili Hongreline",
-		hands="Inyanga Dastanas +1",
+		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
-		feet="Aya. Gambieras +1",
+		feet="Brioso Slippers +2",
 		neck="Moonbow Whistle +1",
-		waist="Porous Rope",
+		waist="Sailfi Belt +1",
 		left_ear="Aoidos' Earring",
 		right_ear="Skald Breloque",
 		left_ring="Inyanga Ring",
@@ -250,13 +265,13 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
 		body="Fili Hongreline",
-		hands="Inyanga Dastanas +1",
+		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
-		feet="Aya. Gambieras +1",
+		feet="Brioso Slippers +2",
 		neck="Moonbow Whistle +1",
 		waist="Porous Rope",
 		left_ear="Aoidos' Earring",
@@ -269,13 +284,13 @@ function init_gear_sets()
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
 		body="Inyanga Jubbah +1", --13
-		hands="Inyanga Dastanas +1",
+		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
-		feet="Aya. Gambieras +1",
+		feet="Brioso Slippers +2",
 		neck="Moonbow Whistle +1",
 		waist="Porous Rope",
 		left_ear="Aoidos' Earring",
@@ -292,7 +307,8 @@ function init_gear_sets()
 
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {
-		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
 	} 
 
     -- Cast spell with normal gear, except using Daurdabla instead
@@ -305,10 +321,10 @@ function init_gear_sets()
 
 	}
 
-    -- Other general spells and classes.
-    sets.midcast.Cure = {
-		main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
-		sub="Enki Strap",
+	-- Other general spells and classes.
+	sets.midcast.Cure = {
+		main={name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15'}, priority=2},
+		sub={name="Enki Strap", priority=1},
 		waist="Hachirin-no-Obi",
 		back="Solemnity Cape",
 	}
@@ -320,8 +336,8 @@ function init_gear_sets()
 
     
 	sets.midcast['Enhancing Magic'] = {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={name="Oranyan", priority=2},
+		sub={name="Enki Strap", priority=1},
 	}
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
     
@@ -340,77 +356,105 @@ function init_gear_sets()
     
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.Idle = {
-		main={name="Oranyan", priority=1},
-		sub={name="Enki Strap", priority=2},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
+
+		range="Gjallarhorn",
 		head="Inyanga Tiara +1",
 		body="Ayanmo Corazza +2",
-		hands="Inyan. Dastanas +1",
+		hands="Inyan. Dastanas +2",
 		legs="Inyanga Shalwar +2",
 		feet="Aya. Gambieras +2",
-		neck="Mnbw. Whistle +1",
-		waist="Porous Rope",
-		left_ear="Aoidos' Earring",
-		right_ear="Skald Breloque",
+		neck="Bathy Choker +1",
+		waist="Sailfi Belt +1",
+		left_ear="Handler's Earring +1",
+		right_ear="Dawn Earring",
 		left_ring="Inyanga Ring",
 		right_ring="Ayanmo Ring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
-		range="Gjallarhorn",
+		--range="Gjallarhorn",
 		--back={ name="Mecisto. Mantle", augments={'Cap. Point+38%','Accuracy+4','DEF+4',}}, 
 		--range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
 	}
 	sets.Idle.Main = sets.Idle
-	sets.idle.Town = set_combine(sets.Idle.Main, {
+	sets.Idle.Town = set_combine(sets.Idle.Main, {
 		range="Gjallarhorn",
 	})
 	sets.Idle.PDT = {
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
+		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		head="Inyanga Tiara +1",
 		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +1",
-		legs="Inyanga Shalwar +2",
-		feet="Aya. Gambieras +1",
-		left_ear="Aoidos' Earring",
-		right_ear="Skald Breloque",
+		hands="Aya. Manopolas +2",
+		legs="Aya. Cosciales +1",
+		feet="Aya. Gambieras +2",
+		neck="Mnbw. Whistle +1",
+		waist="Porous Rope",
+		left_ear="Eabani Earring",
+		right_ear="Thureous Earring",
 		left_ring="Inyanga Ring",
 		right_ring="Ayanmo Ring",
+		back="Solemnity Cape",
 	}
 	sets.Idle.Current = sets.Idle.Main
-    
+	
+	
+
     -- Defense sets
+    sets.defense.PDT = sets.Idle.PDT
+    sets.defense.MDT = sets.Idle.PDT
+    sets.Kiting = sets.Idle.PDT
 
-    sets.defense.PDT = sets.Idle
 
-    sets.defense.MDT = sets.Idle
 
-    sets.Kiting = sets.Idle
 
     sets.latent_refresh = {
-		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',  priority=1}},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
 		legs="Inyanga Shalwar +2",
 		left_ring="Inyanga Ring",
 		waist="Fucho-no-obi"
 	}
 
+
+
     -- Engaged sets
 
 	sets.engaged = {
-		main="Kaja Knife",
-		sub={ name="Skinflayer", augments={'Crit. hit damage +5%','DEX+6','Accuracy+10','Attack+20','DMG:+4',}},
+		main={ name="Kaja Knife", priority=2 },
+		sub={ name="Skinflayer", augments={'Crit. hit damage +5%','DEX+6','Accuracy+10','Attack+20','DMG:+4'}, priority=1},
 		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
-		legs="Ayanmo Cosciales",
+		legs="Aya. Cosciales +1",
 		feet="Aya. Gambieras +2",
 		neck={ name="Bard's Charm +1", augments={'Path: A',}},
 		waist="Kentarch Belt +1",
 		left_ear="Dominance Earring",
-		right_ear="Eabani Earring",
+		right_ear="Dawn Earring",
 		left_ring="Hetairoi Ring",
 		right_ring="Apate Ring",
-		back="Solemnity Cape",
+		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 	
 	sets.meva = {
-
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Genmei Shield", priority=1},
+		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		head="Inyanga Tiara +1",
+		body="Inyanga Jubbah +1",
+		hands="Inyan. Dastanas +2",
+		legs="Inyanga Shalwar +2",
+		feet="Inyan. Crackows +1",
+		neck="Mnbw. Whistle +1",
+		waist="Porous Rope",
+		left_ear="Eabani Earring",
+		right_ear="Thureous Earring",
+		left_ring="Inyanga Ring",
+		right_ring="Ayanmo Ring",
+		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 	
 	
@@ -579,7 +623,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if spell.interrupted then
 	  --add_to_chat(8,'--------- Casting Interupted: '..spell.name..'---------')
 	end 
-	equip(sets.Idle.Current)    
+	equip(sets.idle.Current)    
 	if precast_start then 
 		--add_to_chat(8,"Spell: "..spell.name..string.format(" Casting Time: %.2f", aftercast_start - precast_start))
 	end
@@ -598,7 +642,7 @@ function status_change(new,tab)
     if new == 'Resting' then
         equip(sets.Resting)
     else
-        equip(sets.Idle.Current)
+        equip(sets.idle.Current)
     end
 end
 
@@ -654,8 +698,10 @@ function calculate_duration(spell, spellMap)
     if player.equipment.main == "Kali" then mult = mult + 0.05 end
     if player.equipment.sub == "Kali" then mult = mult + 0.05 end
     if player.equipment.sub == "Legato Dagger" then mult = mult + 0.05 end
-    if player.equipment.neck == "Aoidos' Matinee" then mult = mult + 0.1 end
+	if player.equipment.neck == "Aoidos' Matinee" then mult = mult + 0.1 end
+	if player.equipment.neck == "Moonbow Whistle" then mult = mult + 0.2 end 
 	if player.equipment.neck == "Moonbow Whistle +1" then mult = mult + 0.3 end 
+	if player.equipment.body == "Fili Hongreline" then mult = mult + 0.11 end
     if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
     if player.equipment.legs == "Inyanga Shalwar +1" then mult = mult + 0.15 end
 	if player.equipment.legs == "Inyanga Shalwar +2" then mult = mult + 0.17 end
@@ -667,11 +713,16 @@ function calculate_duration(spell, spellMap)
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet" then mult = mult + 0.1 end
 	if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +3" then mult = mult + 0.2 end
 	if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +2" then mult = mult + 0.1 end
-    if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +1" then mult = mult + 0.1 end
+	if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +1" then mult = mult + 0.1 end
+	if spellMap == 'Madrigal' and player.equipment.head == "Fili Calot" then mult = mult + 0.1 end
     if spellMap == 'Madrigal' and player.equipment.head == "Fili Calot +1" then mult = mult + 0.1 end
-    if spellMap == 'Minuet' and player.equipment.body == "Fili Hongreline" then mult = mult + 0.1 end
-    if spellMap == 'March' and player.equipment.hands == 'Fili Manchettes' then mult = mult + 0.1 end
-    if spellMap == 'Ballad' and player.equipment.legs == "Fili Rhingrave +1" then mult = mult + 0.1 end
+	if spellMap == 'Minuet' and player.equipment.body == "Fili Hongreline" then mult = mult + 0.1 end
+	if spellMap == 'Minuet' and player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.1 end
+	if spellMap == 'March' and player.equipment.hands == 'Fili Manchettes' then mult = mult + 0.1 end
+	if spellMap == 'March' and player.equipment.hands == 'Fili Manchettes +1' then mult = mult + 0.1 end
+	if spellMap == 'Ballad' and player.equipment.legs == "Fili Rhingrave" then mult = mult + 0.1 end
+	if spellMap == 'Ballad' and player.equipment.legs == "Fili Rhingrave +1" then mult = mult + 0.1 end
+	if spellMap == 'Lullaby' and player.equipment.hands == 'Brioso Cuffs' then mult = mult + 0.1 end
 	if spellMap == 'Lullaby' and player.equipment.hands == 'Brioso Cuffs +1' then mult = mult + 0.1 end
 	if spellMap == 'Lullaby' and player.equipment.hands == 'Brioso Cuffs +2' then mult = mult + 0.1 end
 	if spellMap == 'Lullaby' and player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
@@ -765,7 +816,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)    	
 	if state.TPMode.value == "WeaponLock" then
 	  equip({main=weaponlock_main,sub=weaponlock_sub})
-
 	else
 
 	end
@@ -777,6 +827,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 	else
 		sets.Idle.Current = sets.Idle.Main
 	end
+
 	if playerStatus == 'Idle' then
         equip(sets.Idle.Current)
     end

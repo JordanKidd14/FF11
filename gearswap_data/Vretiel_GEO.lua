@@ -179,7 +179,7 @@ function get_sets()
         feet="Mallquis Clogs +1",
 
         neck="Bagua Charm +2",
-        waist="Mrc.Cpt. Belt",
+        waist="Belisama's Rope +1",
         left_ear="Handler's Earring +1",
         right_ear="Handler's Earring",
         left_ring="Woltaris Ring",
