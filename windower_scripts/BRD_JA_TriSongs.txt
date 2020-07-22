@@ -1,0 +1,26 @@
+send Nightsfury /echo Starting fodder songs...;
+input /echo Starting fodder songs...;
+
+gs c set ExtraSongsMode Dummy
+input /mages ballad 3 <me>; wait 7.1;
+gs c set ExtraSongsMode Dummy
+input /army's paeon VI <me>; wait 7.1;
+gs c set ExtraSongsMode Dummy
+/army's paeon V <me>; wait 7.1;
+
+input /echo Dummies done!;
+send Nightsfury /echo Dummies done;
+wait 0.4;
+send Nightsfury /echo Starting REAL songs...;
+input /echo Starting REAL songs...;
+
+input /troubadour; wait 1.5;
+input /nightingale; wait 1.5;
+input /marcato; wait 1.5;
+
+input /Victory March <me>; wait 7.1;
+input /Valor Minuet V <me>; wait 7.1;
+/Valor Minuet IV <me>; wait 7.1;
+
+input /echo Songs done!;
+send Nightsfury /echo Songs done;

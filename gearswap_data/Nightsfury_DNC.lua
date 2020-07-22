@@ -123,7 +123,7 @@ function init_gear_sets()
         head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Waltz" potency +7%','STR+7','Accuracy+15','Attack+8',}}, -- +7
         body="Meg. Cuirie +2",
         hands="Mummu Wrists +1",
-        legs="Meg. Chausses +1",
+        legs="Meg. Chausses +2",
         feet="Meg. Jam. +2",
         neck="Reti Pendant",
         waist="Chaac Belt",

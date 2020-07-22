@@ -19,7 +19,7 @@
     Simple macro to cast a dummy Daurdabla song:
     /console gs c set ExtraSongsMode Dummy
     /ma "Shining Fantasia" <me>
-    
+    wd
 --]]
 
 -- Initialization function for this job file.
@@ -97,7 +97,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     
-	weaponlock_main="Aeneas"
+	weaponlock_main="Kaja Knife"
 	weaponlock_sub="Genmei Shield"
 	    -- Precast Sets
 
@@ -110,6 +110,7 @@ function init_gear_sets()
 		legs="Ayanmo Cosciales +1",
 		waist="Channeler's Stone",
 		left_ring="Ayanmo Ring",
+		right_ring="Kishar Ring",
 		left_ear="Aoidos' Earring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
 	}
@@ -132,8 +133,11 @@ function init_gear_sets()
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
 		sub={ name="Genmei Shield", priority=1},
 		head="Fili Calot +1",
+		legs="Ayanmo Cosciales +1",
 		body="Inyanga Jubbah +1",
 		waist="Channeler's Stone",
+		left_ring="Ayanmo Ring",
+		right_ring="Kishar Ring",
 		left_ear="Aoidos' Earring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
 	}
@@ -185,16 +189,17 @@ function init_gear_sets()
 		back={ name="Intarabus's Cape", augments={'DEX+10','Accuracy+20 Attack+20','Crit.hit rate+10',}},
 	})
     sets.precast.WS['Rudras Storm'] = set_combine(sets.precast.WS, {
-
+		back={ name="Intarabus's Cape", augments={'Accuracy+5 Attack+5','Weapon skill damage +10%',}},
 	})
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 		waist="Soil belt",
+		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	})
 	sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
-
+		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	})
 	sets.precast.WS['Aeolian Edge'] = {
-
+		back="Toro Cape",
 	}
     
     
@@ -206,8 +211,12 @@ function init_gear_sets()
 	}
         
 
-    sets.midcast.Ballad = {}
-    sets.midcast.Lullaby = {hands="Brioso Cuffs"}
+    sets.midcast.Ballad = {
+
+	}
+    sets.midcast.Lullaby = {
+		hands="Brioso Cuffs"
+	}
 	sets.midcast.Madrigal = {
 		head="Fili Calot +1",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
@@ -230,11 +239,21 @@ function init_gear_sets()
     sets.midcast.Minuet = {
 		body="Fili Hongreline"
 	}
-    sets.midcast.Minne = {}
-    sets.midcast.Paeon = {head="Brioso Roundlet"}
-    sets.midcast.Carol = {hands="Mousai Gages"}
-    sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
-    sets.midcast['Magic Finale'] = {legs="Fili Rhingrave +1"}
+    sets.midcast.Minne = {
+
+	}
+    sets.midcast.Paeon = {
+		head="Brioso Roundlet"
+	}
+    sets.midcast.Carol = {
+		hands="Mousai Gages"
+	}
+    sets.midcast["Sentinel's Scherzo"] = {
+		feet="Fili Cothurnes +1"
+	}
+    sets.midcast['Magic Finale'] = {
+		legs="Fili Rhingrave +1"
+	}
 
     sets.midcast.Mazurka = {
 		neck="Moonbow Whistle +1",
@@ -313,12 +332,12 @@ function init_gear_sets()
 
     -- Cast spell with normal gear, except using Daurdabla instead
     sets.midcast.Daurdabla = {
-		--range=info.ExtraSongInstrument
+		range=info.ExtraSongInstrument
 	}
 
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
     sets.midcast.DaurdablaDummy = {
-
+		range=info.ExtraSongInstrument
 	}
 
 	-- Other general spells and classes.
@@ -402,8 +421,12 @@ function init_gear_sets()
 	
 
     -- Defense sets
-    sets.defense.PDT = sets.Idle.PDT
-    sets.defense.MDT = sets.Idle.PDT
+    sets.defense.PDT = set_combine(sets.Idle.Main, {
+		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+	})
+    sets.defense.MDT = set_combine(sets.Idle.Main, {
+		range={ name="Nibiru Harp", augments={'Mag. Evasion+20','Phys. dmg. taken -3','Magic dmg. taken -3',}},
+	})
     sets.Kiting = sets.Idle.PDT
 
 
@@ -442,7 +465,7 @@ function init_gear_sets()
 	sets.meva = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
 		sub={ name="Genmei Shield", priority=1},
-		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		range={ name="Nibiru Harp", augments={'Mag. Evasion+20','Phys. dmg. taken -3','Magic dmg. taken -3',}},
 		head="Inyanga Tiara +1",
 		body="Inyanga Jubbah +1",
 		hands="Inyan. Dastanas +2",

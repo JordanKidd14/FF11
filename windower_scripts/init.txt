@@ -1,8 +1,7 @@
 lua load equipviewer
 lua load superwarp
-
-//lua load Skillchains
-//lua load stna
+lua load sendalltarget
+lua load Trade
 
 keyboard_allowmmf 1
 
@@ -10,7 +9,7 @@ keyboard_allowmmf 1
 console_position 15 50
 console_color 255 255 0 0
 console_displayactivity 1
-console_fadedelay 8000
+console_fadedelay 7000
 console_chatopen 1
 console_screendir screenshots
 
@@ -19,7 +18,7 @@ game_forceambientlight 1
 game_ambientlight 255 120 120 120
 game_gamma 50
 game_allowsetcursorpos 0
-game_exittype 1
+game_exittype 0
 game_exitprompt 1
 game_allowresize 0
 
@@ -29,21 +28,21 @@ game_allowresize 0
 //fps_position 5 5 //top left
 fps_position -75 1 //top right
 
-drawdistance set 8
+drawdistance set 7
 //Bind keys
 //Bind syntax is "bind <key> <up> <command>
 // ^ represents control- and ! is alt, eg !1 is alt-1
-bind !f10 drawdistance set 8
-bind ^f10 drawdistance set 1
-bind f11 game_forceambientlight
-bind f12 showfps
-bind sysrq screenshot png hide
-bind ^v paste
-echo Toggle Lighting = F11 (Bump mapping must be off to work properly)
-echo Toggle FPS = F12
-echo DrawDistance Lv 10: Alt-F10
-echo DrawDistance Lv 1: Ctrl-F10
-echo Paste Clipboard = Ctrl-V
+//bind !f10 drawdistance set 8
+//bind ^f10 drawdistance set 1
+//bind f11 game_forceambientlight
+//bind f12 showfps
+//bind sysrq screenshot png hide
+//bind ^v paste
+//echo Toggle Lighting = F11 (Bump mapping must be off to work properly)
+//echo Toggle FPS = F12
+//echo DrawDistance Lv 10: Alt-F10
+//echo DrawDistance Lv 1: Ctrl-F10
+//echo Paste Clipboard = Ctrl-V
 
 //Sets ConsoleBG Background Position
 consolebg position 15 50

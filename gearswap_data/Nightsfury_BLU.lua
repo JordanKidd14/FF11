@@ -83,7 +83,7 @@ function get_sets()
 		body="Jhakri Robe +2",
 		hands="Aya. Manopolas +2",
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet="Aya. Gambieras +2",
+		feet={ name="Herculean Boots", augments={'Pet: DEX+6','Pet: Accuracy+1 Pet: Rng. Acc.+1','"Refresh"+2','Accuracy+5 Attack+5',}},
 		neck="Twilight Torque",
 		waist="Flume Belt",
 		left_ear="Ethereal Earring",
@@ -116,35 +116,39 @@ function get_sets()
 
 	--DW III, +31 DW needed to cap with only Flutter on--
 	sets.TP.DualWield = {
+		main="Kaja Sword",
+		sub="Tanmogayi +1",
 		ammo="Ginsen",
 		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		body="Ayanmo Corazza +2",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
+		feet={ name="Herculean Boots", augments={'Pet: DEX+6','Pet: Accuracy+1 Pet: Rng. Acc.+1','"Refresh"+2','Accuracy+5 Attack+5',}},
 		neck="Lissome Necklace",
 		waist="Reiki Yotai",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Epona's Ring",
-		right_ring="Petrov Ring",
+		left_ear="Cessance Earring",
+		right_ear="Suppanomimi",
+		left_ring="Rajas Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
 	--+11 DW for capping with DW3--	
 	sets.TP.CappedHaste = {
+		main="Kaja Sword",
+		sub="Tanmogayi +1",
 		ammo="Ginsen",
 		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		body="Ayanmo Corazza +2",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
+		feet={ name="Herculean Boots", augments={'Pet: DEX+6','Pet: Accuracy+1 Pet: Rng. Acc.+1','"Refresh"+2','Accuracy+5 Attack+5',}},
 		neck="Lissome Necklace",
-		waist="Reiki Yotai",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Ilabrat Ring",
-		right_ring="Petrov Ring",
+		waist="Reiki Yotai",  -- 7
+		left_ear="Cessance Earring",
+		right_ear="Brutal Earring",
+		left_ring="Epona's Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
@@ -252,24 +256,38 @@ function get_sets()
 		feet = "Jhakri Pigaches +1"
 	}
 
-	sets.CDC = {}
+	sets.CDC = {
+		ammo="Falcon Eye",
+		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
+		feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+		neck="Light Gorget",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+		right_ear="Cessance Earring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
 
 	sets.CDC.index = { 'AttackUncapped', 'AttackCapped', 'Accuracy' }
 	CDC_ind = 1
 
 	sets.CDC.AttackUncapped = {
 		ammo="Falcon Eye",
-		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet="Aya. Gambieras +2",
-		neck="Caro Necklace",
+		feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+		neck="Light Gorget",
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		right_ear="Cessance Earring",
-		left_ring="Rajas Ring",
-		right_ring="Begrudging Ring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
@@ -279,65 +297,119 @@ function get_sets()
 	
 	sets.CDC.Accuracy = {
 		ammo="Falcon Eye",
-		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet="Aya. Gambieras +2",
-		neck="Caro Necklace",
+		feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+		neck="Light Gorget",
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		right_ear="Cessance Earring",
-		left_ring="Rajas Ring",
-		right_ring="Begrudging Ring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
-	sets.Expiacion = {}
+	sets.Expiacion = {
+		ammo="Falcon Eye",
+		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands="Jhakri Cuffs +2",
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		feet="Jhakri Pigaches +2",
+		neck="Caro Necklace",
+		waist="Aqua Belt",
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
 
 	sets.Expiacion.index = { 'Attack', 'Accuracy' }
 	Expiacion_ind = 1
 
 	sets.Expiacion.Attack = {
-		ammo="Ginsen",
+		ammo="Falcon Eye",
 		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
 		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
 		hands="Jhakri Cuffs +2",
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet="Jhakri Pigaches +1",
+		feet="Jhakri Pigaches +2",
 		neck="Caro Necklace",
-		waist="Grunfeld Rope",
+		waist="Aqua Belt",
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		right_ear="Cessance Earring",
-		left_ring="Rajas Ring",
-		right_ring="Petrov Ring",
+		right_ear="Ishvara Earring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.Expiacion.Accuracy = {
-		ammo="Ginsen",
+		ammo="Falcon Eye",
 		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
 		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
 		hands="Jhakri Cuffs +2",
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet="Jhakri Pigaches +1",
+		feet="Jhakri Pigaches +2",
 		neck="Caro Necklace",
-		waist="Grunfeld Rope",
+		waist="Aqua Belt",
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		right_ear="Cessance Earring",
-		left_ring="Rajas Ring",
-		right_ring="Petrov Ring",
+		right_ear="Ishvara Earring",
+		left_ring="Begrudging Ring",
+		right_ring="Ilabrat Ring",
 		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
-	sets.SavageBlade = {}
+	sets.SavageBlade = {
+		ammo="Amar Cluster",
+		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands="Jhakri Cuffs +2",
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		feet="Jhakri Pigaches +2",
+		neck="Caro Necklace",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Rajas Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
 
 	sets.SavageBlade.index = { 'Attack', 'Accuracy' }
 	SavageBlade_ind = 1
 	sets.SavageBlade.Attack = set_combine(sets.Expiacion.Attack, {
+		ammo="Amar Cluster",
+		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands="Jhakri Cuffs +2",
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		feet="Jhakri Pigaches +2",
+		neck="Caro Necklace",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Rajas Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	})
 
 	sets.SavageBlade.Accuracy = set_combine(sets.Expiacion.Accuracy, {
+		ammo="Amar Cluster",
+		head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands="Jhakri Cuffs +2",
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		feet="Jhakri Pigaches +2",
+		neck="Caro Necklace",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Rajas Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	})
 
 	sets.SanguineBlade = {
@@ -373,21 +445,7 @@ function get_sets()
 
 	sets.BlackHalo.index = { 'Attack', 'Accuracy' }
 	BlackHalo_ind = 1
-	sets.BlackHalo.Attack = {
-		ammo="Falcon Eye",
-		head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Waltz" potency +7%','STR+7','Accuracy+15','Attack+8',}},
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-		neck="Caro Necklace",
-		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +25',}},
-		right_ear="Brutal Earring",
-		left_ring="Epona's Ring",
-		right_ring="Begrudging Ring",
-		back=Rosmerta.DA,
-	}
+	sets.BlackHalo.Attack = sets.Expiacion.Attack
 	
 	sets.BlackHalo.Accuracy = set_combine(sets.Expiacion.Accuracy, {})
 	
@@ -442,18 +500,18 @@ function get_sets()
 
 	sets.BlueMagic.STR = {
 		ammo="Amar Cluster",
-		head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Waltz" potency +7%','STR+7','Accuracy+15','Attack+8',}},
-		body="Jhakri Robe +2",
-		hands={ name="Herculean Gloves", augments={'Accuracy+23 Attack+23','"Triple Atk."+2','AGI+7','Accuracy+15','Attack+8',}},
+		head="Aya. Zucchetto +2",
+		body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+		hands="Jhakri Cuffs +2",
 		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet="Jhakri Pigaches +1",
+		feet="Jhakri Pigaches +2",
 		neck="Caro Necklace",
 		waist="Grunfeld Rope",
-		left_ear="Suppanomimi",
-		right_ear="Brutal Earring",
+		left_ear="Odnowa Earring +1",
+		right_ear="Ethereal Earring",
 		left_ring="Petrov Ring",
 		right_ring="Rajas Ring",
-		back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+		back={ name="Cornflower Cape", augments={'MP+25','DEX+1','Blue Magic skill +10',}},
 	}
 
 	sets.BlueMagic.STRDEX = set_combine(sets.BlueMagic.STR, {})
@@ -481,8 +539,8 @@ function get_sets()
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
-		left_ring="Locus Ring",
-		right_ring="Arvina Ringlet +1",
+		left_ring="Kishar Ring",
+		right_ring="Locus Ring",
 		back={ name="Cornflower Cape", augments={'MP+25','DEX+1','Blue Magic skill +10',}},
 	}
 	
@@ -499,8 +557,8 @@ function get_sets()
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
-		left_ring="Locus Ring",
-		right_ring="Arvina Ringlet +1",
+		left_ring="Kishar Ring",
+		right_ring="Locus Ring",
 		back={ name="Cornflower Cape", augments={'MP+25','DEX+1','Blue Magic skill +10',}},
 	}
 	-----------------------------------------
@@ -565,21 +623,7 @@ function get_sets()
 		Feet =  TaeonBoots.Regen
 	})
 
-	sets.BlueMagic.Stun = {
-		ammo = "Pemphredo Tathlum",
-		head = "Carmine Mask +1",
-		neck = "Erra Pendant",
-		ear1 = "Telos Earring",
-		ear2 = "Dignitary's Earring",
-		body = "Samnuha Coat",
-		hands = "Leyline Gloves",
-		ring1 = "Etana Ring",
-		ring2 = "Stikini Ring +1",
-		back = "Cornflower cape",
-		waist = "Eschan Stone",
-		legs = "Hashishin Tayt +1",
-		feet = HerculeanFeet.Idle
-	}
+	sets.BlueMagic.Stun = sets.BlueMagic.INT.MAB
 
 	sets.BlueMagic.HeavyStrike = {
 		ammo = "Falcon Eye",
@@ -613,21 +657,7 @@ function get_sets()
 		feet = "Medium's Sabots"
 	}
 
-	sets.BlueMagic.MagicAccuracy = {
-		ammo="Falcon Eye",
-		head="Aya. Zucchetto +2",
-		body="Jhakri Robe +2",
-		hands="Aya. Manopolas +2",
-		legs="Aya. Cosciales +2",
-		feet="Jhakri Pigaches +2",
-		neck="Incanter's Torque",
-		waist="Eschan Stone",
-		left_ear="Hermetic Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Fortified Ring",
-		right_ring="Kishar Ring",
-		back={ name="Cornflower Cape", augments={'MP+25','DEX+1','Blue Magic skill +10',}},
-	}
+	sets.BlueMagic.MagicAccuracy = sets.BlueMagic.INT.MAB
 
 	--Occultation is every 50 skill, magic barrier equals skill, rest dont matter
 	---For example diamondhide caps at 500

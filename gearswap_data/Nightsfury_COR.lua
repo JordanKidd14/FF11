@@ -49,7 +49,7 @@ function user_setup()
     --gear.tpback = gear.exp
     --gear.tprange = gear.exp
 
-    gear.magicws = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+5','Weapon skill damage +10%',} }
+    gear.magicws = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',} }
     gear.tpback = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',} }
     gear.tprange = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',} }
     gear.snap = { name="Camulus's Mantle", augments={'"Snapshot"+10',} }
@@ -167,15 +167,15 @@ function init_gear_sets()
         head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands="Meg. Gloves +2",
-        legs="Meg. Chausses +1",
+        legs="Meg. Chausses +2",
         feet="Meg. Jam. +2",
         neck="Caro Necklace",
         waist="Grunfeld Rope",
         left_ear="Ishvara Earring",
         right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         left_ring="Rajas Ring",
-        right_ring="Petrov Ring",
-        back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+5','Weapon skill damage +10%',}},
+        right_ring="Ilabrat Ring",
+        back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     }
 
     sets.precast.WS['Last Stand'] = {
@@ -282,7 +282,7 @@ function init_gear_sets()
     sets.idle = {
         ammo=gear.MAbullet,
         range="Death Penalty",
-        head="Meghanada Visor +1",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Mummu Kecks +2",
@@ -299,7 +299,7 @@ function init_gear_sets()
     sets.idle.Town =  {
         ammo=gear.MAbullet,
         range="Death Penalty",
-        head="Meghanada Visor +1",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Carmine Cuisses +1",
@@ -333,7 +333,7 @@ function init_gear_sets()
     sets.engaged.Melee = {
         range="Death Penalty",
         ammo="Living Bullet",
-        head={ name="Herculean Helm", augments={'Attack+23','"Store TP"+3','Accuracy+10',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Mummu Jacket +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
@@ -364,7 +364,7 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = {
-        head="Meghanada Visor +1",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Meghanada Cuirie +2",
         hands={ name="Floral Gauntlets", augments={'Rng.Acc.+14','Accuracy+13','"Triple Atk."+2','Magic dmg. taken -3%',}},
         legs="Carmine Cuisses +1", 

@@ -42,7 +42,7 @@ function init_gear_sets()
         sub="Ammurapi Shield",
         body="Inyanga Jubbah +1",  --13
         legs="Aya. Cosciales +2", -- 5
-        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+5','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
+        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     }
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
@@ -54,7 +54,20 @@ function init_gear_sets()
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
-        left_ear="Nourish. Earring",
+        lmain={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
+        sub="Sors Shield",
+        ammo="Kalboron Stone",
+        head="Theophany Cap",
+        body="Inyanga Jubbah +1",
+        hands="Inyan. Dastanas +2",
+        legs="Aya. Cosciales +2",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
+        neck="Clr. Torque +1",
+        left_ear="Nourish. Earring +1",
+        right_ear="Flashward Earring",
+        left_ring="Inyanga Ring",
+        right_ring="Woltaris Ring",
+        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     })
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
@@ -88,21 +101,21 @@ function init_gear_sets()
     sets.midcast.CureSolace = {}
 
     sets.midcast.Cure = {
-        main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
-        sub="Sors Shield",
+        main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},  -- 10 (1), 2 (2)
+        sub="Sors Shield",  -- 3 (1)
         ammo="Kalboron Stone",
         head="Inyanga Tiara +2",
-        body="Inyanga Jubbah +1",  --13
-        hands="Weath. Cuffs +1",
-        legs="Assiduity Pants",
-        feet="Weath. Souliers +1",
-        neck="Clr. Torque +1",
+        body="Inyanga Jubbah +1",
+        hands="Weath. Cuffs +1",  -- 9 (1)
+        legs="Aya. Cosciales +2",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},  -- 10 (1)
+        neck="Clr. Torque +1",  -- 7 (1)
         waist="Belisama's Rope +1",
-        left_ear="Nourish. Earring",
+        left_ear="Nourish. Earring +1",  -- 6 (1)
         right_ear="Flashward Earring",
         left_ring="Stikini Ring",
-        right_ring="Stikini Ring",
-        back={ name="Alaunus's Cape", augments={'MND+20','"Cure" potency +10%',}},
+        right_ring="Sirona's Ring",
+        back={ name="Alaunus's Cape", augments={'MND+20','"Cure" potency +10%',}},  -- 10 (1)
     }
 
     sets.midcast.CureSolace = set_combine(sets.midcast.Cure, {
@@ -116,23 +129,28 @@ function init_gear_sets()
         main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
         sub="Ammurapi Shield",
         body="Inyanga Jubbah +1",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
         hands="Inyan. Dastanas +2",
-        legs="Aya. Cosciales +2",
+        legs="Theophany pantaloons",
         neck="Malison Medallion",
         left_ring = {name="Ephedra Ring", bag="wardrobe1"},
         right_ring = {name="Ephedra Ring", bag="wardrobe2"},
-        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+5','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
+        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     }
 
     sets.midcast.StatusRemoval = {
         neck="Clr. Torque +1",
+        body="Inyanga Jubbah +1",
+        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     }
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {
+        main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
+        sub="Ammurapi Shield",
         hands="Inyanga Dastanas +2",
         left_ring="Stikini Ring",
-        right_ring="Stikini Ring",
+        feet="Theophany duckbills",
     }
 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
@@ -149,6 +167,8 @@ function init_gear_sets()
 
     sets.midcast.Regen =  set_combine(sets.midcast['Enhancing Magic'], {
         head="Inyanga Tiara +2",
+        legs="Theophany pantaloons",
+        sub="Ammurapi Shield",
     })
 
     sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {
@@ -204,15 +224,15 @@ function init_gear_sets()
         head="Inyanga Tiara +2",
         body={ name="Vanya Robe", augments={'HP+50','MP+50','"Refresh"+2',}},
         hands="Inyan. Dastanas +2",
-        legs="Assiduity Pants",
+        legs="Inyanga Shalwar +2",
         feet="Inyan. Crackows +2",
         neck="Loricate Torque +1",
-        waist="Belisama's Rope +1",
-        left_ear="Nourish. Earring",
+        waist="Shinjutsu-no-Obi +1",
+        left_ear="Nourish. Earring +1",
         right_ear="Flashward Earring",
         left_ring="Inyanga Ring",
         right_ring="Woltaris Ring",
-        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+5','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
+        back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     }
 
     sets.idle.PDT = {}
