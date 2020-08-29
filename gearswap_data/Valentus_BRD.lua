@@ -112,21 +112,22 @@ function init_gear_sets()
 		left_ring="Ayanmo Ring",
 		right_ring="Kishar Ring",
 		left_ear="Aoidos' Earring",
+		right_ear="Etiolation Earring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
 	}
 	
     sets.precast.FC = sets.precast.FastCast 
 
     sets.precast.FastCast.Cure = set_combine(sets.precast.FastCast, {
-		main={name="Oranyan", priority=2},
-		sub={name="Enki Strap", priority=1},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Ammurapi Shield", priority=1},
 	})
 
     sets.precast.FastCast.Stoneskin = set_combine(sets.precast.FastCast, { waist="Siegel Sash", })
 
     sets.precast.FastCast['Enhancing Magic'] = set_combine(sets.precast.FastCast, {
-		main={name="Oranyan", priority=2},
-		sub={name="Enki Strap", priority=1},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Ammurapi Shield", priority=1},
 	})
 
     sets.precast.FastCast.BardSong = {
@@ -139,6 +140,7 @@ function init_gear_sets()
 		left_ring="Ayanmo Ring",
 		right_ring="Kishar Ring",
 		left_ear="Aoidos' Earring",
+		right_ear="Gwati Earring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
 	}
 
@@ -167,6 +169,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
 		--range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		range={ name="Linos", augments={'Attack+13','"Store TP"+4','Quadruple Attack +2',}},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
@@ -196,7 +199,7 @@ function init_gear_sets()
 		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	})
 	sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
-		back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+		back={ name="Intarabus's Cape", augments={'Accuracy+5 Attack+5','Weapon skill damage +10%',}},
 	})
 	sets.precast.WS['Aeolian Edge'] = {
 		back="Toro Cape",
@@ -223,7 +226,7 @@ function init_gear_sets()
 	}
 	sets.midcast.Etude = {  -- use emp set bonus for extra stats:
 		hands="Fili Manchettes",
-		body="Fili Hongreline",
+		body="Fili Hongreline +1",
 		head="Fili Calot +1",
 	}
 	sets.midcast.Prelude = {
@@ -237,7 +240,7 @@ function init_gear_sets()
 		range="Marsyas"
 	}
     sets.midcast.Minuet = {
-		body="Fili Hongreline"
+		body="Fili Hongreline +1"
 	}
     sets.midcast.Minne = {
 
@@ -249,10 +252,10 @@ function init_gear_sets()
 		hands="Mousai Gages"
 	}
     sets.midcast["Sentinel's Scherzo"] = {
-		feet="Fili Cothurnes +1"
+		--feet="Fili Cothurnes +1"
 	}
     sets.midcast['Magic Finale'] = {
-		legs="Fili Rhingrave +1"
+		--legs="Fili Rhingrave +1"
 	}
 
     sets.midcast.Mazurka = {
@@ -267,9 +270,9 @@ function init_gear_sets()
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
-		sub={ name="Genmei Shield", priority=1},
-		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
-		body="Fili Hongreline",
+		sub={ name="Ammurapi Shield", priority=1},
+		head="Fili Calot +1",
+		body="Fili Hongreline +1",
 		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +2",
@@ -284,17 +287,17 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {
-		main={name="Oranyan", priority=2},
-		sub={name="Enki Strap", priority=1},
-		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
-		body="Fili Hongreline",
+		main={ name="Kaja Knife", priority=2},
+		sub={ name="Ammurapi Shield", priority=1},
+		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
+		body="Fili Hongreline +1",
 		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +2",
 		neck="Moonbow Whistle +1",
 		waist="Porous Rope",
 		left_ear="Aoidos' Earring",
-		right_ear="Skald Breloque",
+		right_ear="Gwati Earring",
 		left_ring="Inyanga Ring",
 		right_ring="Ayanmo Ring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
@@ -303,9 +306,9 @@ function init_gear_sets()
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {
-		main={name="Oranyan", priority=2},
-		sub={name="Enki Strap", priority=1},
-		head={ name="Chironic Hat", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Cure" spellcasting time -3%','INT+9','Mag. Acc.+8',}},
+		main={ name="Kaja Knife", priority=2},
+		sub={ name="Ammurapi Shield", priority=1},
+		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
 		body="Inyanga Jubbah +1", --13
 		hands="Inyanga Dastanas +2",
 		legs="Inyanga Shalwar +2",
@@ -313,7 +316,7 @@ function init_gear_sets()
 		neck="Moonbow Whistle +1",
 		waist="Porous Rope",
 		left_ear="Aoidos' Earring",
-		right_ear="Skald Breloque",
+		right_ear="Gwati Earring",
 		left_ring="Inyanga Ring",
 		right_ring="Ayanmo Ring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
@@ -327,7 +330,7 @@ function init_gear_sets()
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
-		sub={ name="Genmei Shield", priority=1},
+		sub={ name="Ammurapi Shield", priority=1},
 	} 
 
     -- Cast spell with normal gear, except using Daurdabla instead
@@ -342,8 +345,8 @@ function init_gear_sets()
 
 	-- Other general spells and classes.
 	sets.midcast.Cure = {
-		main={name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15'}, priority=2},
-		sub={name="Enki Strap", priority=1},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
+		sub={ name="Ammurapi Shield", priority=1},
 		waist="Hachirin-no-Obi",
 		back="Solemnity Cape",
 	}
@@ -355,8 +358,13 @@ function init_gear_sets()
 
     
 	sets.midcast['Enhancing Magic'] = {
-		main={name="Oranyan", priority=2},
-		sub={name="Enki Strap", priority=1},
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+		sub="Ammurapi Shield",
+		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
+		waist="Sailfi Belt +1",
+		right_ear="Gwati Earring",
 	}
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
     
@@ -365,7 +373,11 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Regen = {
-		head="Inyanga Tiara +1",
+		head="Inyanga Tiara +2",
+		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},
+		sub="Ammurapi Shield",
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
 	}
 	
 	
@@ -376,10 +388,9 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.Idle = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
-		sub={ name="Genmei Shield", priority=1},
-
+		sub={ name="Ammurapi Shield", priority=1},
 		range="Gjallarhorn",
-		head="Inyanga Tiara +1",
+		head="Inyanga Tiara +2",
 		body="Ayanmo Corazza +2",
 		hands="Inyan. Dastanas +2",
 		legs="Inyanga Shalwar +2",
@@ -387,7 +398,7 @@ function init_gear_sets()
 		neck="Bathy Choker +1",
 		waist="Sailfi Belt +1",
 		left_ear="Handler's Earring +1",
-		right_ear="Dawn Earring",
+		right_ear="Etiolation Earring",
 		left_ring="Inyanga Ring",
 		right_ring="Ayanmo Ring",
 		back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
@@ -403,7 +414,7 @@ function init_gear_sets()
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
 		sub={ name="Genmei Shield", priority=1},
 		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
-		head="Inyanga Tiara +1",
+		head="Inyanga Tiara +2",
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
 		legs="Aya. Cosciales +1",
@@ -418,14 +429,16 @@ function init_gear_sets()
 	}
 	sets.Idle.Current = sets.Idle.Main
 	
-	
+
 
     -- Defense sets
     sets.defense.PDT = set_combine(sets.Idle.Main, {
 		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		sub={ name="Genmei Shield", priority=1},
 	})
     sets.defense.MDT = set_combine(sets.Idle.Main, {
 		range={ name="Nibiru Harp", augments={'Mag. Evasion+20','Phys. dmg. taken -3','Magic dmg. taken -3',}},
+		sub={ name="Ammurapi Shield", priority=1},
 	})
     sets.Kiting = sets.Idle.PDT
 
@@ -434,7 +447,7 @@ function init_gear_sets()
 
     sets.latent_refresh = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
-		sub={ name="Genmei Shield", priority=1},
+		sub={ name="Ammurapi Shield", priority=1},
 		legs="Inyanga Shalwar +2",
 		left_ring="Inyanga Ring",
 		waist="Fucho-no-obi"
@@ -447,7 +460,7 @@ function init_gear_sets()
 	sets.engaged = {
 		main={ name="Kaja Knife", priority=2 },
 		sub={ name="Skinflayer", augments={'Crit. hit damage +5%','DEX+6','Accuracy+10','Attack+20','DMG:+4'}, priority=1},
-		range={ name="Terpander", augments={'HP+30','Mag. Acc.+10','Damage Taken -3%',}},
+		range={ name="Linos", augments={'Attack+13','"Store TP"+4','Quadruple Attack +2',}},
 		head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
@@ -464,9 +477,9 @@ function init_gear_sets()
 	
 	sets.meva = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
-		sub={ name="Genmei Shield", priority=1},
+		sub={ name="Ammurapi Shield", priority=1},
 		range={ name="Nibiru Harp", augments={'Mag. Evasion+20','Phys. dmg. taken -3','Magic dmg. taken -3',}},
-		head="Inyanga Tiara +1",
+		head="Inyanga Tiara +2",
 		body="Inyanga Jubbah +1",
 		hands="Inyan. Dastanas +2",
 		legs="Inyanga Shalwar +2",

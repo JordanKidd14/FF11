@@ -42,6 +42,7 @@ function init_gear_sets()
         sub="Ammurapi Shield",
         body="Inyanga Jubbah +1",  --13
         legs="Aya. Cosciales +2", -- 5
+        hands={ name="Fanatic Gloves", augments={'MP+5','"Fast Cast"+7',}},  -- 7
         back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Occ. inc. resist. to stat. ailments+10',}},
     }
         
@@ -106,7 +107,7 @@ function init_gear_sets()
         ammo="Kalboron Stone",
         head="Inyanga Tiara +2",
         body="Inyanga Jubbah +1",
-        hands="Weath. Cuffs +1",  -- 9 (1)
+        hands="Telchine Gloves",  -- 10 (1)
         legs="Aya. Cosciales +2",
         feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},  -- 10 (1)
         neck="Clr. Torque +1",  -- 7 (1)
@@ -130,7 +131,7 @@ function init_gear_sets()
         sub="Ammurapi Shield",
         body="Inyanga Jubbah +1",
         feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
-        hands="Inyan. Dastanas +2",
+        hands={ name="Fanatic Gloves", augments={'MP+5','"Fast Cast"+7',}},
         legs="Theophany pantaloons",
         neck="Malison Medallion",
         left_ring = {name="Ephedra Ring", bag="wardrobe1"},
@@ -148,9 +149,12 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {
         main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
         sub="Ammurapi Shield",
-        hands="Inyanga Dastanas +2",
         left_ring="Stikini Ring",
-        feet="Theophany duckbills",
+        right_ring="Stikini Ring",
+        head={ name="Telchine Cap", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +8',}},
+        body={ name="Telchine Chas.", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +8',}},
+        hands={ name="Telchine Gloves", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +9',}},
+        feet={ name="Telchine Pigaches", augments={'Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}},
     }
 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
@@ -162,11 +166,13 @@ function init_gear_sets()
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
-
+        body="Blessed Briault",
     })
 
     sets.midcast.Regen =  set_combine(sets.midcast['Enhancing Magic'], {
         head="Inyanga Tiara +2",
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
         legs="Theophany pantaloons",
         sub="Ammurapi Shield",
     })
@@ -179,19 +185,14 @@ function init_gear_sets()
         
     })
 
-
-    sets.midcast['Divine Magic'] = {}
-
-    sets.midcast['Dark Magic'] = {}
-
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
         sub="Ammurapi Shield",
         hands="Inyan. Dastanas +2",
-        body={ name="Vanya Robe", augments={'HP+50','MP+50','"Refresh"+2',}},
+        body="Inyanga Jubbah +1",
         head="Inyanga Tiara +2",
-        legs="Aya. Cosciales +2", 
-        feet="Aya. Gambieras",
+        legs="Inyanga Shalwar +2",
+        feet="Inyan. Crackows +2",
         hands="Inyan. Dastanas +2",
         left_ring="Stikini Ring",
         right_ring="Stikini Ring",
@@ -200,14 +201,19 @@ function init_gear_sets()
     sets.midcast.IntEnfeebles = {
         sub="Ammurapi Shield",
         hands="Inyan. Dastanas +2",
-        body={ name="Vanya Robe", augments={'HP+50','MP+50','"Refresh"+2',}},
+        body="Inyanga Jubbah +1",
         head="Inyanga Tiara +2",
-        legs="Aya. Cosciales +2",
+        legs="Inyanga Shalwar +2",
         hands="Inyan. Dastanas +2",
-        feet="Aya. Gambieras",
+        feet="Inyan. Crackows +2",
         left_ring="Stikini Ring",
         right_ring="Stikini Ring",
     }
+
+    sets.midcast['Divine Magic'] = {
+        hands={ name="Fanatic Gloves", augments={'MP+5','"Fast Cast"+7',}},
+    }
+    sets.midcast['Dark Magic'] = {}
 
     
     -- Sets to return to when not performing an action.
@@ -278,12 +284,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spell.english == "Paralyna" and buffactive.Paralyzed then
         -- no gear swaps if we're paralyzed, to avoid blinking while trying to remove it.
         eventArgs.handled = true
-    end
-    
-    if spell.skill == 'Healing Magic' then
-        gear.default.obi_back = "Mending Cape"
-    else
-        gear.default.obi_back = "Toro Cape"
     end
 end
 

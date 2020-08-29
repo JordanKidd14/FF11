@@ -15,9 +15,18 @@ end
 function job_setup()
     -- List of pet weaponskills to check for
     petWeaponskills = S{
-        "Slapstick", "Knockout", "Magic Mortar",
-        "Chimera Ripper", "String Clipper",  "Cannibal Blade", "Bone Crusher", "String Shredder",
-        "Arcuballista", "Daze", "Armor Piercer", "Armor Shatterer"
+        "Slapstick", 
+        "Knockout", 
+        "Magic Mortar",
+        "Chimera Ripper",
+        "String Clipper",  
+        "Cannibal Blade", 
+        "Bone Crusher", 
+        "String Shredder",
+        "Arcuballista", 
+        "Daze", 
+        "Armor Piercer", 
+        "Armor Shatterer"
     }
 end
 
@@ -62,7 +71,10 @@ function init_gear_sets()
         main={ name="Nibiru Sainti", augments={'Melee skill +16','Ranged skill +16','Magic skill +16',}} -- 10
     }
 
-    sets.precast.JA.Maneuver = {
+    sets.precast.JA.Maneuver = { -- threshold +80
+        main={ name="Midnights", augments={'Pet: Attack+25','Pet: Accuracy+25','Pet: Damage taken -3%',}},
+        range="Animator P +1",
+        ammo="Automat. Oil +3",
         body="Cirque Farsetto +1",
         hands="Pup. Dastanas",
         neck="Bfn. Collar +1",
@@ -82,24 +94,34 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
-        body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
-        hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+        range="Animator P +1",
+        ammo="Automat. Oil +3",
+        head="Hiza. Somen　+2",
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+        hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Hiza. Hizayoroi +2",
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
+        feet="Hiza. Sune-Ate +1",
         neck="Caro Necklace",
-        waist="Grunfeld Rope",
+        waist="Moonbow Belt +1",
         left_ear="Brutal Earring",
-        right_ear="Enmerkar Earring",
-        left_ring="Petrov Ring",
-        right_ring="Epona's Ring",
+        right_ear="Cessance Earring",
+        left_ring="Epona's Ring",
+        right_ring="Gere Ring",
         back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+2 Pet: Rng.Atk.+2','Pet: Haste+10',}},
     }
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {
+        -- CRIT
+        body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
+        hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+    })
     sets.precast.WS['Stringing Pummel'].Mod = set_combine(sets.precast.WS['Stringing Pummel'], {})
-    sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS, {
+        -- CRIT
+        body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
+        hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+    })
     sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {})
 
     -- Midcast Sets
@@ -113,17 +135,19 @@ function init_gear_sets()
     sets.midcast.Pet['Elemental Magic'] = {feet="Pitre Babouches", waist="Ukko Sash"}
 
     sets.midcast.Pet.WeaponSkill = {
+        range="Animator P +1",
+        ammo="Automat. Oil +3",
         head="Tali'ah Turban +1",
-        body={ name="Rao Togi", augments={'Pet: HP+100','Pet: Accuracy+15','Pet: Damage taken -3%',}},
-        hands={ name="Rao Kote", augments={'Pet: HP+100','Pet: Accuracy+15','Pet: Damage taken -3%',}},
-        legs="Tali'ah Seraweels",
+        body="Tali'ah Manteel +1",
+        hands="Malignance Gloves",
+        legs="Tali'ah Sera. +1",
         feet="Tali'ah Crackows +1",
         neck="Empath Necklace",
-        waist="Klouskap Sash",
-        left_ear="Burana Earring",
+        waist="Moonbow Belt +1",
+        left_ear="Domes. Earring",
         right_ear="Enmerkar Earring",
         left_ring="Overbearing Ring",
-        right_ring="Varar Ring",
+        right_ring="Gere Ring",
         back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+2 Pet: Rng.Atk.+2','Pet: Haste+10',}},
     }
 
@@ -137,20 +161,19 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {
-        main={ name="Ohtas", augments={'Accuracy+70','Pet: Accuracy+70','Pet: Haste+10%',}},
-        range="Animator P",
+        range="Animator P +1",
         ammo="Automat. Oil +3",
-        head="Tali'ah Turban +1",
-        body={ name="Rao Togi", augments={'Pet: HP+100','Pet: Accuracy+15','Pet: Damage taken -3%',}},
-        hands={ name="Rao Kote", augments={'Pet: HP+100','Pet: Accuracy+15','Pet: Damage taken -3%',}},
-        legs={ name="Herculean Trousers", augments={'Accuracy+14 Attack+14','Weapon skill damage +2%','STR+4','Accuracy+15','Attack+12',}},
-        feet={ name="Herculean Boots", augments={'Accuracy+25 Attack+25','Crit.hit rate+1','AGI+1','Attack+9',}},
-        neck="Empath Necklace",
-        waist="Klouskap sash",
-        left_ear="Burana Earring",
-        right_ear="Enmerkar Earring",
-        left_ring="Overbearing Ring",
-        right_ring="Thurandaut Ring",
+        head="Hiza. Somen　+2",
+        body="Hiza. Haramaki +1",
+        hands="Malignance Gloves",
+        legs="Tali'ah Sera. +1",
+        feet="Malignance Boots",
+        neck="Warder's Charm +1",
+        waist="Moonbow Belt +1",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Vocane Ring",
         back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+2 Pet: Rng.Atk.+2','Pet: Haste+10',}},
     }
 
@@ -162,6 +185,20 @@ function init_gear_sets()
     -- Idle sets to wear while pet is engaged
     sets.idle.Pet.Engaged = set_combine(sets.defense.PDT, {
         main={ name="Ohtas", augments={'Accuracy+70','Pet: Accuracy+70','Pet: Haste+10%',}},
+        range="Animator P +1",
+        ammo="Automat. Oil +3",
+        head="Tali'ah Turban +1",
+        body="Tali'ah Manteel +1",
+        hands="Malignance Gloves",
+        legs="Tali'ah Sera. +1",
+        feet="Tali'ah Crackows +1",
+        neck="Empath Necklace",
+        waist="Moonbow Belt +1",
+        left_ear="Domes. Earring",
+        right_ear="Burana Earring",
+        left_ring="Overbearing Ring",
+        right_ring="Defending Ring",
+        back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+2 Pet: Rng.Atk.+2','Pet: Haste+10',}},
     })
 
     sets.idle.Pet.Engaged.Ranged = set_combine(sets.idle.Pet.Engaged, {hands="Cirque Guanti +1",legs="Cirque Pantaloni +1"})
@@ -177,7 +214,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         main={ name="Midnights", augments={'Pet: Attack+25','Pet: Accuracy+25','Pet: Damage taken -3%',}},
-        range="Animator P",
+        range="Animator P +1",
         ammo="Automat. Oil +3",
         head="Tali'ah Turban +1",
         body={ name="Rao Togi", augments={'Pet: HP+100','Pet: Accuracy+15','Pet: Damage taken -3%',}},
@@ -206,17 +243,19 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        head="Tali'ah Turban +1",
-        body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
-        hands="Tali'ah Gages +1",
+        range="Animator P +1",
+        ammo="Automat. Oil +3",
+        head="Hiza. Somen　+2",
+        body="Tali'ah Manteel +1",
+        hands="Malignance Gloves",
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Empath Necklace",
-        waist="Klouskap Sash",
-        left_ear="Brutal Earring",
-        right_ear="Enmerkar Earring",
-        left_ring="Petrov Ring",
-        right_ring="Varar Ring",
+        feet="Malignance Boots",
+        neck="Lissome Necklace",
+        waist="Moonbow Belt +1",
+        left_ear="Cessance Earring",
+        right_ear="Brutal Earring",
+        left_ring="Epona's Ring",
+        right_ring="Gere Ring",
         back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+2 Pet: Rng.Atk.+2','Pet: Haste+10',}},
     }
 

@@ -1,0 +1,9 @@
+send Nightsfury /echo Reapplying songs (NO JA, Full Potency)...;
+input /echo Reapplying songs (NO JA, Full Potency)...;
+
+input /Victory March <me>; wait 7.1;
+input /Valor Minuet V <me>; wait 7.1;
+/Valor Minuet IV <me>; wait 7.1;
+
+input /echo 4.25m~ songs done;
+send Nightsfury /echo 4.25m~ songs done;

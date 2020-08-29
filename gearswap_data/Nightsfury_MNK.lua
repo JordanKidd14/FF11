@@ -151,7 +151,7 @@ function init_gear_sets()
     sets.precast.WSAcc = {
         ammo="Amar Cluster",
         head="Mummu Bonnet +1",
-        body="Mummu Jacket +2",
+        body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs="Mummu Kecks +2",
         feet="Mummu Gamash. +1",
@@ -179,7 +179,7 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Hiza. Hizayoroi +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Mnk. Nodowa +1",
         waist="Moonbow Belt +1",
         left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
@@ -195,7 +195,7 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands="Anchor. Gloves +2",
         legs="Hiza. Hizayoroi +2",
-        feet="Hiza. Sune-Ate +1",
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Light Gorget",
         waist="Ask Sash",
         left_ear="Ishvara Earring",
@@ -210,13 +210,13 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands="Anchor. Gloves +2",
         legs="Hiza. Hizayoroi +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Caro Necklace",
         waist="Moonbow Belt +1",
-        left_ear="Ishvara Earring",
-        right_ear="Sherida Earring",
-        left_ring="Rajas Ring",
-        right_ring="Petrov Ring",
+        left_ear="Sherida Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        left_ring="Gere Ring",
+        right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
     sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {
@@ -225,7 +225,7 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands="Anchor. Gloves +2",
         legs="Hiza. Hizayoroi +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Caro Necklace",
         waist="Moonbow Belt +1",
         left_ear="Ishvara Earring",
@@ -256,7 +256,7 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Light Gorget",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
@@ -272,12 +272,12 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Light Gorget",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
         right_ear="Sherida Earring",
-        left_ring="Rajas Ring",
+        left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
     })
@@ -292,7 +292,7 @@ function init_gear_sets()
         waist="Moonbow Belt +1",
         left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         right_ear="Sherida Earring",
-        left_ring="Petrov Ring",
+        left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
@@ -307,39 +307,39 @@ function init_gear_sets()
         waist="Moonbow Belt +1",
         left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         right_ear="Sherida Earring",
-        left_ring="Petrov Ring",
+        left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
     sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        head="Mummu Bonnet +1",
-        body="Mummu Jacket +2",
+        head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Hiza. Hizayoroi +2",
-        feet="Anch. Gaiters +2",
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Caro Necklace",
         waist="Moonbow Belt +1",
         left_ear="Ishvara Earring",
         right_ear="Sherida Earring",
-        left_ring="Petrov Ring",
+        left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
     sets.precast.WS['Shell Crusher'] = set_combine(sets.precast.WSAcc, {
-        ammo="Falcon Eye",
+        ammo="Knobkierrie",
         head="Mummu Bonnet +1",
         body="Mummu Jacket +2",
-        hands="Mummu Wrists +1",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +1",
+        feet="Malignance Boots",
         neck="Sanctity Necklace",
         waist="Eschan Stone",
-        left_ear="Hermetic Earring",
-        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-        left_ring="Beeline Ring",
+        left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        right_ear="Hermetic Earring",
+        left_ring="Mummu Ring",
         right_ring="Ilabrat Ring",
-        back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
+        back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
     --ACC
     sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
@@ -355,7 +355,9 @@ function init_gear_sets()
     sets.precast.WS["Howling Fist"].Mod = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSMod)
     sets.precast.WS["Asuran Fists"].Mod = set_combine(sets.precast.WS["Asuran Fists"], sets.precast.WSMod)
     sets.precast.WS["Ascetic's Fury"].Mod = set_combine(sets.precast.WS["Ascetic's Fury"], sets.precast.WSMod)
-    sets.precast.WS["Victory Smite"].Mod = set_combine(sets.precast.WS["Victory Smite"], sets.precast.WSMod)
+    sets.precast.WS["Victory Smite"].Mod = set_combine(sets.precast.WS["Victory Smite"], {
+
+    })
     sets.precast.WS["Shijin Spiral"].Mod = set_combine(sets.precast.WS["Shijin Spiral"], sets.precast.WSMod)
     sets.precast.WS["Dragon Kick"].Mod = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSMod)
     sets.precast.WS["Tornado Kick"].Mod = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSMod)
@@ -379,7 +381,7 @@ function init_gear_sets()
     sets.idle = {
         ammo="Ginsen",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Mummu Jacket +2",
+        body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
         feet="Anch. Gaiters +2",
@@ -402,10 +404,10 @@ function init_gear_sets()
     sets.defense.PDT = {
         ammo="Staunch Tathlum",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Mummu Jacket +2",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Ahosi Leggings",
+        feet="Malignance Boots",
         neck="Twilight Torque",
         waist="Moonbow Belt +1",
         left_ear="Odnowa Earring +1",
@@ -421,9 +423,9 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Skormoth Mask",
         body="Emet Harness",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Ahosi Leggings",
+        feet="Malignance Boots",
         neck="Twilight Torque",
         waist="Moonbow Belt +1",
         left_ear="Sherida Earring",
@@ -456,7 +458,7 @@ function init_gear_sets()
         main="Spharai",
         ammo="Ginsen",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Mummu Jacket +2",
+        body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
         feet="Anch. Gaiters +2",
@@ -464,7 +466,7 @@ function init_gear_sets()
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
         right_ear="Sherida Earring",
-        left_ring="Epona's Ring",
+        left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
    }
@@ -476,6 +478,8 @@ function init_gear_sets()
         ammo="Amar Cluster",  --2
         head="Hiza. Somen　+2",  --2
         body="Sweller's Harness", --5
+        feet="Malignance Boots",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}}, -- 10
         right_ring="Hizamaru Ring",  --2
@@ -489,10 +493,10 @@ function init_gear_sets()
         -- 1163
         ammo="Falcon Eye",
         head="Hiza. Somen　+2",
-        body="Mummu Jacket +2",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-        feet="Anch. Gaiters +2",
+        feet="Malignance Boots",
         neck="Mnk. Nodowa +1",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
@@ -506,10 +510,10 @@ function init_gear_sets()
         -- 1196
         ammo="Falcon Eye",
         head="Hiza. Somen　+2",
-        body="Mummu Jacket +2",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-        feet="Anch. Gaiters +2",
+        feet="Malignance Boots",
         neck="Mnk. Nodowa +1",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
@@ -526,9 +530,9 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Hiza. Somen　+2",
         body="Sweller's Harness",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Ahosi Leggings",
+        feet="Malignance Boots",
         neck="Twilight Torque",
         waist="Moonbow Belt +1",
         left_ear="Odnowa Earring +1",
@@ -545,6 +549,8 @@ function init_gear_sets()
         head="Hiza. Somen　+2",  --2
         body="Sweller's Harness", --5
         legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        hands="Malignance Gloves",
         back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}}, -- 10
         right_ring="Hizamaru Ring",  --2
         left_ring="Defending Ring",

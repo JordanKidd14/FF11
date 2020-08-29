@@ -2,6 +2,7 @@ lua load equipviewer
 lua load superwarp
 lua load sendalltarget
 lua load Trade
+lua load PartyBuffs
 
 keyboard_allowmmf 1
 
@@ -61,3 +62,11 @@ bind !f3 input /ta <a22>
 bind !f4 input /ta <a23>
 bind !f5 input /ta <a24>
 bind !f6 input /ta <a25>
+
+
+
+alias sa send @all
+
+alias home send Nightsfury hp a Port Windurst mh
+alias norg send Nightsfury hp a Norg ah
+alias ambu send Nightsfury hp a Mhaura

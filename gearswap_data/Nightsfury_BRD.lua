@@ -347,7 +347,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Regen = {
-		head="Inyanga Tiara +1",
+		head="Inyanga Tiara +2",
 	}
 	
 	

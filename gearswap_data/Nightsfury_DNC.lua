@@ -262,22 +262,19 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        main={ name="Taming Sari", augments={'STR+9','DEX+8','DMG:+14',}},
-        sub={ name="Enchufla", augments={'DMG:+3','STR+3','Accuracy+3',}},
-        --range="Albin Bane",
-        ammo="Ginsen",
-        head="Skormoth Mask",
-        body="Mummu Jacket +1",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Lissome Necklace",
-        waist="Reiki Yotai",
-        left_ear="Cessance Earring",
-        right_ear="Sherida Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
-        back={ name="Senuna's Mantle", augments={'DEX+1','Accuracy+6 Attack+6','"Dbl.Atk."+10',}},
+        ammo="Staunch Tathlum",
+        head="Mummu Bonnet +1",
+        body="Mummu Jacket +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        neck="Twilight Torque",
+        waist="Flume Belt",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Vocane Ring",
+        back="Solemnity Cape",
     }
 
     sets.idle.Town = sets.idle
@@ -304,21 +301,19 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        main={ name="Taming Sari", augments={'STR+9','DEX+8','DMG:+14',}},
-        sub={ name="Enchufla", augments={'DMG:+3','STR+3','Accuracy+3',}},
         --range="Albin Bane",
         ammo="Ginsen",
-        head="Skormoth Mask",
-        body="Mummu Jacket +1",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Mummu Jacket +2",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
+        feet="Malignance Boots",
         neck="Lissome Necklace",
         waist="Reiki Yotai",
         left_ear="Cessance Earring",
         right_ear="Sherida Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Senuna's Mantle", augments={'DEX+1','Accuracy+6 Attack+6','"Dbl.Atk."+10',}},
     }
     

@@ -150,9 +150,12 @@ function init_gear_sets()
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
 
     sets.precast.JA['Elemental Siphon'] = {  
-        waist="Lucidity sash",
-        right_ear="Andoaa Earring",
+        waist="Lucidity Sash",
+        right_ear="Andoaa Earring",  --5
+        right_ring="Evoker's Ring", --10
         hands="Lamassu Mitts",
+        legs="Baayami Slops",  -- 30
+        head="Beckoner's Horn +1",  --13
      }
 
     sets.precast.JA['Mana Cede'] = {}
@@ -172,19 +175,24 @@ function init_gear_sets()
 
         -- II 9 / 15
         main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},  --2
-        sub={name="Elan Strap +1",priority=1},
+        sub={name="Vox Grip", priority=1},
         ammo="Sancus Sachet +1",  --7
+        -- body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}, --3
 
         -- I 15 / 15
         left_ear="Evans Earring",  --2
         body="Shomonjijoe +1",  --8
         hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},  --6
-        -- body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}, --4
 
-        -- WHY NOT?
+        -- WHY NOT?  ------------
+        legs="Baayami Slops",  -- 30
+        head="Beckoner's Horn +1",  --13
         waist="Lucidity Sash",
-        right_ear="Andoaa Earring",
-        right_ring="Fervor Ring",
+        right_ear="Andoaa Earring",  --5
+        right_ring="Evoker's Ring", --10
+        feet="Baayami Sabots",
+        left_ring="Fervor Ring",
+        right_ring="Evoker's Ring",
     }
     -- Pact delay reduction gear --------------------------- ----------
     -- Pact delay reduction gear -------------------------------------
@@ -200,22 +208,36 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        left_ring="Kishar Ring",
-        body="Inyanga Jubbah",
-        legs={ name="Psycloth Lappas", augments={'MP+35','Mag. Acc.+6','"Fast Cast"+3',}},
         main="Oranyan",
         head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
+        body="Inyanga Jubbah +1",
+        hands="Inyan. Dastanas +2",
+        legs="Inyanga Shalwar +2",
+        waist="Channeler's Stone",
+        left_ear="Etiolation Earring",
+        left_ring="Kishar Ring",
         back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','"Fast Cast"+10',}},
     }
+
+    sets.precast.FC['Summoning Magic'] = set_combine(sets.precast.FC, {
+        body="Baayami Robe",
+    })
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
         waist="Siegel Sash",
         main="Oranyan",
+        sub="Elan Strap +1",
+
+        ammo="Sancus Sachet +1",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
+        legs="Inyanga Shalwar +2",
+        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
         right_ear="Andoaa Earring",
-        hands="Inyanga Dastanas",
     })
 
-
+    sets.midcast['Enhancing Magic'] =  sets.precast.FC['Enhancing Magic']
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {}
@@ -229,30 +251,48 @@ function init_gear_sets()
     --------------------------------------
 
     sets.midcast.FastRecast = {
-        body="Inyanga Jubbah",
+        body="Inyanga Jubbah +1",
         waist="Klouskap Sash",
         head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
     }
 
-    sets.midcast.Cure = {
-        main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
-        sub="Enki Strap",
+    sets.midcast['Enhancing Magic'] =  {
+        waist="Siegel Sash",
+        main="Oranyan",
+        sub="Elan Strap +1",
+
         ammo="Sancus Sachet +1",
-        head="Inyanga Tiara +1",
-        body="Inyanga Jubbah",
-        hands="Inyan. Dastanas +1",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
+        legs="Inyanga Shalwar +2",
+        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
+        right_ear="Andoaa Earring",
+    }
+
+    sets.midcast.Refresh = sets.midcast['Enhancing Magic']
+    sets.midcast.Regen = sets.midcast['Enhancing Magic']
+    sets.midcast.Haste = sets.midcast['Enhancing Magic']
+
+    sets.midcast.Cure = {
+        main="Tamaxchi",
+        sub="Ammurapi Shield",
+        ammo="Sancus Sachet +1",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+        body="Inyanga Jubbah +1",
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
         legs="Inyanga Shalwar +2",
         feet="Inyan. Crackows +1",
-        neck="Deviant Necklace",
-        waist="Channeler's Stone",
-        left_ear="Thureous Earring",
-        right_ear="Eabani Earring",
+        neck="Bathy Choker +1",
+        waist="Porous Rope",
+        left_ear="Etiolation Earring",
+        right_ear="Gwati Earring",
         left_ring="Kishar Ring",
         right_ring="Inyanga Ring",
         back="Solemnity Cape",
     }
 
-    sets.midcast.Stoneskin = {}
+    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {})
 
     sets.midcast['Elemental Magic'] = {}
 
@@ -261,40 +301,44 @@ function init_gear_sets()
 
     -- Avatar pact sets.  All pacts are Ability type.
 
-    sets.midcast.Pet.BloodPactWard = {  --485
+    sets.midcast.Pet.BloodPactWard = {  --603, 603-300=303,  303/60 8m05s haste2
+        -- FOCUS ON SMN SKILL
         main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},
-        sub={name="Elan Strap +1",priority=1},
+        sub={name="Vox Grip", priority=1},
         ammo="Sancus Sachet +1",
-        head={ name="Psycloth Tiara", augments={'Pet: Attack+17','Pet: "Mag.Atk.Bns."+7','Pet: Enmity+3',}},
-        body="Shomonjijoe +1",
-        hands="Lamassu Mitts",
-        legs="Assid. Pants +1",
-        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
-        neck={ name="Smn. Collar +1", augments={'Path: A',}},
+        head="Beckoner's Horn +1",
+        body="Baayami Robe",
+        hands="Inyan. Dastanas +2",
+        legs="Baayami Slops",
+        feet="Baayami Sabots",
+        neck="Caller's Pendant",
         waist="Lucidity Sash",
-        left_ear="Evans Earring",
+        left_ear="Etiolation Earring",
         right_ear="Andoaa Earring",
         left_ring="Fervor Ring",
-        right_ring= {name="Varar Ring +1", bag="wardrobe2"},
+        right_ring="Evoker's Ring",
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
     }
 
     sets.midcast.Pet.DebuffBloodPactWard = set_combine(sets.midcast.Pet.BloodPactWard, {
+        -- FOCUS ON MAGIC ACC
         main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},
-        sub={name="Elan Strap +1",priority=1},
+        sub={name="Vox Grip",priority=1},
+
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
-        body="Tali'ah Manteel +1",
-        hands="Lamassu Mitts",
+        body="Tali'ah Manteel +2",
+        hands="Tali'ah Gages +1",
         legs="Tali'ah Sera. +2",
-        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
+        feet="Tali'ah Crackows +1",
         neck={ name="Smn. Collar +1", augments={'Path: A',}},
         waist="Lucidity Sash",
-        left_ear="Evans Earring",
+        left_ear="Etiolation Earring",
         right_ear="Andoaa Earring",
-        left_ring="Fervor Ring",
-        right_ring= {name="Varar Ring +1", bag="wardrobe2"},
+        left_ring="Evoker's Ring",
+        right_ring="Fervor Ring",
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
+
     })
 
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
@@ -342,9 +386,9 @@ function init_gear_sets()
 
     -- Spirits cast magic spells, which can be identified in standard ways.
 
-    sets.midcast.Pet.WhiteMagic = {legs="Summoner's Spats"}
+    sets.midcast.Pet.WhiteMagic = {}
 
-    sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {legs="Summoner's Spats"})
+    sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {})
 
     sets.midcast.Pet['Elemental Magic'].Resistant = {}
 
@@ -358,23 +402,23 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2, bag="wardrobe1"},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2},
+        sub={name="Elan Strap +1", priority=1},
+
         ammo="Sancus Sachet +1",
-        head="Tali'ah Turban +2",
-        --body="Shomonjijoe +1",
-        body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
-        hands="Asteria Mitts +1",
-        legs="Assid. Pants +1",
-        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
-        neck={ name="Smn. Collar +1", augments={'Path: A',}},
+        head="Beckoner's Horn +1",
+        body="Shomonjijoe +1",
+        hands="Inyan. Dastanas +2",
+        legs="Inyanga Shalwar +2",
+        feet="Baayami Sabots",
+        neck="Bathy Choker +1",
         waist="Lucidity Sash",
-        left_ear="Gelos Earring",
+        left_ear="Etiolation Earring",
         right_ear="Eabani Earring",
-        left_ring= {name="Varar Ring +1", bag="wardrobe1"},
-        right_ring= {name="Varar Ring +1", bag="wardrobe2"},
+        right_ring="Inyanga Ring",
+        left_ring="Varar Ring +1",
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
         --back={ name="Mecisto. Mantle", augments={'Cap. Point+38%','Accuracy+4','DEF+4',}},
-        sub={name="Elan Strap +1", priority=1, bag="wardrobe2"},
     }
 
     sets.latent_refresh = {
@@ -405,20 +449,20 @@ function init_gear_sets()
     -- Can make due without either the head or the body, and use +refresh items in those slots.
 
     sets.idle.Avatar = {
-        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}, priority=2},
-        sub={name="Elan Strap +1",priority=1},
+        main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}},
+        sub="Vox Grip",
         ammo="Sancus Sachet +1",
-        head="Tali'ah Turban +2",
-        body="Tali'ah Manteel +1",
-        hands="Asteria Mitts +1",
+        head="Beckoner's Horn +1",
+        body="Shomonjijoe +1",
+        hands="Inyan. Dastanas +2",
         legs="Assid. Pants +1",
         feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
         neck={ name="Smn. Collar +1", augments={'Path: A',}},
         waist="Lucidity Sash",
-        left_ear="Evans Earring",
+        left_ear="Etiolation Earring",
         right_ear="Handler's Earring +1",
-        left_ring= {name="Varar Ring +1", bag="wardrobe1"},
-        right_ring= {name="Varar Ring +1", bag="wardrobe2"},
+        left_ring="Inyanga Ring",
+        right_ring="Evoker's Ring",
         --back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
         back={ name="Mecisto. Mantle", augments={'Cap. Point+38%','Accuracy+4','DEF+4',}},
     }
@@ -431,7 +475,7 @@ function init_gear_sets()
 
     -- Favor uses Caller's Horn instead of Convoker's Horn for refresh
     sets.idle.Avatar.Favor ={
-        
+        head="Beckoner's Horn +1",
     }
 
     -- Used when avatar begins attacking (assualt used):
@@ -440,8 +484,8 @@ function init_gear_sets()
         sub={name="Elan Strap +1",priority=1},
         ammo="Sancus Sachet +1",
         head="Tali'ah Turban +2",
-        body="Tali'ah Manteel +1",
-        hands={ name="Merlinic Dastanas", augments={'Pet: Accuracy+27 Pet: Rng. Acc.+27','Pet: "Dbl. Atk."+4','Pet: STR+3','Pet: Mag. Acc.+2',}},
+        body="Tali'ah Manteel +2",
+        hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
         legs="Tali'ah Sera. +2",
         feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
         neck={ name="Smn. Collar +1", augments={'Path: A',}},
@@ -491,7 +535,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         head="Tali'ah Turban +2",
-        body="Tali'ah Manteel +1",
+        body="Tali'ah Manteel +2",
         hands="Asteria Mitts +1",
         legs="Tali'ah Sera. +2",
         feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},

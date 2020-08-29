@@ -87,11 +87,11 @@ nukeModes = M('normal', 'acc')
 -- Setting this to true will stop the text spam, and instead display modes in a UI.
 -- Currently in construction.
 use_UI = true
-hud_x_pos = 1400    --important to update these if you have a smaller screen
-hud_y_pos = 200     --important to update these if you have a smaller screen
+hud_x_pos = 1700    --important to update these if you have a smaller screen
+hud_y_pos = 320     --important to update these if you have a smaller screen
 hud_draggable = true
-hud_font_size = 10
-hud_transparency = 200 -- a value of 0 (invisible) to 255 (no transparency at all)
+hud_font_size = 8
+hud_transparency = 0 -- a value of 0 (invisible) to 255 (no transparency at all)
 hud_font = 'Impact'
 
 -- Setup your Key Bindings here:  
@@ -145,7 +145,7 @@ include('GEO_Lib.lua')          -- leave this as is
 --------------------------------------------------------------------------------------------------------------
 
 geomancy:set('Geo-Frailty')     -- Geo Spell Default      (when you first load lua / change jobs the saved spells is this one)
-indicolure:set('Indi-Haste')    -- Indi Spell Default     (when you first load lua / change jobs the saved spells is this one)
+indicolure:set('Indi-Fury')    -- Indi Spell Default     (when you first load lua / change jobs the saved spells is this one)
 validateTextInformation()
 
 -- Optional. Swap to your geo macro sheet / book
@@ -160,31 +160,30 @@ function get_sets()
     sets.me = {}        -- leave this empty
     sets.pan = {}       -- leave this empty
 	sets.me.idle = {}	-- leave this empty    
-	sets.pan.idle = {}	-- leave this empty 
-
-	-- sets starting with sets.me means you DONT have a luopan currently out.
-	-- sets starting with sets.pan means you DO have a luopan currently out.
-
-    -- Your idle set when you DON'T have a luopan out
+	sets.pan.idle = {}	-- leave this empty wasa
+  
+ 	-- sets starting with sets.me means you DONT have a luopan currently out.
+ 	-- sets starting with sets.pan means you DO have a luopan currently out.
+ 
+    -- Your idle set when you D ON'T have a luopan out
     sets.me.idle.normal = {
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 
-        range="Dunna",
-
-        head="Mallquis Chapeau +1",
-        body={ name="Vanya Robe", augments={'HP+50','MP+50','"Refresh"+2',}},
+        head="Azimuth Hood +1",
+        body="Jhakri Robe +2",
         hands="Mallquis Cuffs +1",
         legs="Assiduity Pants",
-        feet="Mallquis Clogs +1",
+        feet="Mallquis Clogs +2",
 
-        neck="Bagua Charm +2",
-        waist="Belisama's Rope +1",
+        neck="Loricate Torque +1",
+        waist="Shinjutsu-no-Obi +1",
         left_ear="Handler's Earring +1",
         right_ear="Handler's Earring",
         left_ring="Woltaris Ring",
         right_ring="Stikini Ring",
-        back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
+        back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: "Regen"+5',}},
     }
 	
 	-- This or herald gaiters or +1 +2 +3... 
@@ -208,27 +207,39 @@ function get_sets()
     -----------------------
     -- Luopan Perpetuation
     -----------------------
+
+    --Hit Points	        ~1,680
+    --Innate Damage Taken	-50%  /  86.5
+    --Perpetuation Cost
+    --Base	                -24 HP/tic
+    --Lasting Emanation	    -17 HP/tic
+    --Ecliptic Attrition	-30 HP/tic
+    --Both          	    -23 HP/tic
       
     -- Luopan's Out --  notice sets.pan 
     -- This is the base for all perpetuation scenarios, as seen below
-    sets.pan.idle.normal = {
+    sets.pan.idle.normal = {  -- 29 TOTAL
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
-        head="Azimuth Hood",
-        body="Mallquis Saio +2",
+        head="Azimuth Hood +1",  --3
+        body={ name="Telchine Chas.", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +8',}},   -- 2
         neck="Loricate Torque +1",
-        hands="Geomancy Mitaines",
+        feet={ name="Telchine Pigaches", augments={'Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}},  --3
+        hands={ name="Telchine Gloves", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +9',}},  -- 2
+        legs={ name="Merlinic Shalwar", augments={'STR+6','Pet: "Regen"+4','Accuracy+3 Attack+3',}},  -- 4
         left_ear="Handler's Earring +1",
         right_ear="Handler's Earring",
-        back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: "Regen"+5',}},
+        back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: "Regen"+5',}},  --15 
     }
 	
 	-- This is when you have a Luopan out but want to sacrifice some slot for master DT, put those slots in.
     sets.pan.idle.dt = set_combine(sets.pan.idle.normal,{
-
+        body="Mallquis Saio +2",
+        neck="Loricate Torque +1",
     })   
     sets.pan.idle.mdt = set_combine(sets.pan.idle.normal,{
-
+        neck="Loricate Torque +1",
+        body="Mallquis Saio +2",
     })   
 
 
@@ -277,20 +288,24 @@ function get_sets()
       
     -- Generic Casting Set that all others take off of. Here you should add all your fast cast  
     sets.precast.casting = {
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         legs="Geomancy Pants",
+        feet={ name="Merlinic Crackows", augments={'Weapon skill damage +3%','Weapon Skill Acc.+7','"Treasure Hunter"+2','Accuracy+8 Attack+8','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
         back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
     }   
 
     sets.precast.geomancy = set_combine(sets.precast.casting,{
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
         hands="Geomancy Mitaines",
-        left_ring="Stikini Ring",
-        right_ring="Stikini Ring",
+        neck="Bagua Charm +2",
+        left_ring= {name="Stikini Ring", bag="wardrobe1"},
+        right_ring= {name="Stikini Ring", bag="wardrobe2"},
         body={ name="Bagua Tunic", augments={'Enhances "Bolster" effect',}},
-        head="Azimuth Hood",
+        head="Azimuth Hood +1",
         back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
     })
     -- Enhancing Magic, eg. Siegal Sash, etc
@@ -310,6 +325,15 @@ function get_sets()
     sets.precast.regen = set_combine(sets.precast.casting,{
 
     })     
+
+    sets.precast['Elemental Magic'] = {
+        head="Mallquis Chapeau +1",
+        body="Mallquis Saio +2",
+        hands="Mallquis Cuffs +1",
+        legs="Mallquis Trews",
+        feet="Mallquis Clogs +2",
+        left_ring="Mallquis Ring",
+    }
     ---------------------
     -- Ability Precasting
     ---------------------
@@ -329,7 +353,7 @@ function get_sets()
     	head = "Geomancy Galero",
     }  
     sets.precast["Full Circle"] = {
-        head="Azimuth Hood",
+        head="Azimuth Hood +1",
     }  
     sets.precast["Curative Recantation"] = {
     	hands = "Bagua Mitaines",
@@ -346,35 +370,41 @@ function get_sets()
     ----------
             
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
-    sets.midcast.casting = {
-
-    }
+    sets.midcast.casting = {}
 
     sets.midcast.Cursna = {
         neck="Malison Medallion",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
         left_ring = {name="Ephedra Ring", bag="wardrobe1"},
         right_ring = {name="Ephedra Ring", bag="wardrobe2"},
     }
 	
 	-- For Geo spells /
     sets.midcast.geo = set_combine(sets.midcast.casting,{
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
         hands="Geomancy Mitaines",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
         left_ring="Stikini Ring",
-        head="Azimuth Hood",
-        right_ring="Stikini Ring",
+        head="Azimuth Hood +1",
+        neck="Bagua Charm +2",
+        left_ring= {name="Stikini Ring", bag="wardrobe1"},
+        right_ring= {name="Stikini Ring", bag="wardrobe2"},
         body={ name="Bagua Tunic", augments={'Enhances "Bolster" effect',}},
         back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
     })
 	-- For Indi Spells
     sets.midcast.indi = set_combine(sets.midcast.geo,{
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
-        ssub="Ammurapi Shield",
-        head="Azimuth Hood",
+        sub="Ammurapi Shield",
+        head="Azimuth Hood +1",
         hands="Geomancy Mitaines",
-        left_ring="Stikini Ring",
-        right_ring="Stikini Ring",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
+        neck="Bagua Charm +2",
+        left_ring= {name="Stikini Ring", bag="wardrobe1"},
+        right_ring= {name="Stikini Ring", bag="wardrobe2"},
         body={ name="Bagua Tunic", augments={'Enhances "Bolster" effect',}},
         back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
     })
@@ -385,22 +415,24 @@ function get_sets()
 	
 	-- Nuking
     sets.midcast.nuking.normal = set_combine(sets.midcast.casting,{
+        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
         sub="Ammurapi Shield",
-        head="Mallquis Chapeau +1",
-        body="Mallquis Saio +2",
-        hands="Mallquis Cuffs +1",
-        legs="Mallquis Trews",
-        feet="Mallquis Clogs +1",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+        head="Jhakri Coronal +1",
+        body="Jhakri Robe +2",
+        hands="Jhakri Cuffs +1",
+        legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+11%','CHR+6','Mag. Acc.+3',}},
+        feet={ name="Merlinic Crackows", augments={'Weapon skill damage +3%','Weapon Skill Acc.+7','"Treasure Hunter"+2','Accuracy+8 Attack+8','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
         neck="Bagua Charm +2",
         waist="Belisama's Rope +1",
         left_ear="Handler's Earring +1",
-        right_ear="Handler's Earring",
-        left_ring="Acumen Ring",
-        right_ring="Mallquis Ring",
+        right_ear="Gifted Earring",
+        left_ring="Mallquis Ring",
+        right_ring="Acumen Ring",
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
     })
 	sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-
+        legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+11%','CHR+6','Mag. Acc.+3',}},
 	})
     sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal,{
 
@@ -411,42 +443,61 @@ function get_sets()
 
 	-- Enfeebling
 	sets.midcast.IntEnfeebling = set_combine(sets.midcast.casting,{
+        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        sub="Ammurapi Shield",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Mallquis Chapeau +1",
         body="Mallquis Saio +2",
         hands="Mallquis Cuffs +1",
-        legs="Mallquis Trews",
-        feet="Mallquis Clogs +1",
+        legs="Mallquis Trews +1",
+        feet="Mallquis Clogs +2",
         neck="Bagua Charm +2",
-        waist="Belisama's Rope +1",
-        left_ear="Handler's Earring +1",
-        right_ear="Handler's Earring",
-        left_ring="Acumen Ring",
-        right_ring="Mallquis Ring",
+        waist="Mrc.Cpt. Belt",
+        left_ear="Flashward Earring",
+        right_ear="Spellbr. Earring",
+        left_ring="Stikini Ring",
+        right_ring="Stikini Ring",
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
     })
 	sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting,{
+        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        sub="Ammurapi Shield",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Mallquis Chapeau +1",
         body="Mallquis Saio +2",
         hands="Mallquis Cuffs +1",
-        legs="Mallquis Trews",
-        feet="Mallquis Clogs +1",
+        legs="Mallquis Trews +1",
+        feet="Mallquis Clogs +2",
         neck="Bagua Charm +2",
-        waist="Belisama's Rope +1",
-        left_ear="Handler's Earring +1",
-        right_ear="Handler's Earring",
-        left_ring="Acumen Ring",
-        right_ring="Mallquis Ring",
+        waist="Mrc.Cpt. Belt",
+        left_ear="Flashward Earring",
+        right_ear="Spellbr. Earring",
+        left_ring="Stikini Ring",
+        right_ring="Stikini Ring",
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
     })
 	
     -- Enhancing
     sets.midcast.enhancing = set_combine(sets.midcast.casting,{
-
+        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        sub="Ammurapi Shield",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+        head={ name="Telchine Cap", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +8',}},
+        body={ name="Telchine Chas.", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +8',}},
+        hands={ name="Telchine Gloves", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +9',}},
+        feet={ name="Telchine Pigaches", augments={'Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}},
+        legs="Geomancy Pants",
+        neck="Loricate Torque +1",
+        waist="Cascade Belt",
+        left_ear="Handler's Earring +1",
+        right_ear="Gifted Earring",
+        left_ring="Stikini Ring",
+        right_ring="Stikini Ring",
+        back={ name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +17','Pet: Damage taken -4%','Damage taken-4%',}},
     })
 	
     -- Stoneskin
     sets.midcast.stoneskin = set_combine(sets.midcast.enhancing,{
-
     })
     sets.midcast.refresh = set_combine(sets.midcast.enhancing,{
     })
@@ -457,13 +508,13 @@ function get_sets()
         body="Mallquis Saio +2",
         hands="Mallquis Cuffs +1",
         legs="Mallquis Trews",
-        feet="Mallquis Clogs +1",
+        feet={ name="Merlinic Crackows", augments={'Weapon skill damage +3%','Weapon Skill Acc.+7','"Treasure Hunter"+2','Accuracy+8 Attack+8','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
         neck="Bagua Charm +2",
         waist="Belisama's Rope +1",
         left_ear="Handler's Earring +1",
         right_ear="Handler's Earring",
-        left_ring="Stikini Ring",
-        right_ring="Stikini Ring",
+        left_ring= {name="Stikini Ring", bag="wardrobe1"},
+        right_ring= {name="Stikini Ring", bag="wardrobe2"},
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
 	})
 
@@ -474,18 +525,19 @@ function get_sets()
     sets.midcast.cure.normal = set_combine(sets.midcast.casting,{
         main="Tamaxchi",
         sub="Sors Shield",
-        range="Dunna",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Mallquis Chapeau +1",
         body={ name="Vanya Robe", augments={'HP+50','MP+50','"Refresh"+2',}},
-        hands="Weath. Cuffs +1",
+        hands={ name="Telchine Gloves", augments={'Pet: "Regen"+2','Enh. Mag. eff. dur. +9',}},
         legs="Assiduity Pants",
-        feet="Mallquis Clogs +1",
-        neck="Loricate Torque +1",
-        wwaist="Belisama's Rope +1",
-        left_ear="Spellbr. Earring",
-        right_ear="Flashward Earring",
+        feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
+        neck="Bagua Charm +2",
+        waist="Belisama's Rope +1",
+        left_ear="Handler's Earring +1",
+        right_ear="Handler's Earring",
         left_ring="Stikini Ring",
         right_ring="Stikini Ring",
+        back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: "Regen"+5',}},
     })
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal,{
 

@@ -151,18 +151,18 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Mummu Bonnet +1",
-        body="Meg. Cuirie +1",
+        ammo="Falcon Eye",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
-        legs="Meg. Chausses +2",
-        feet="Mummu Gamash. +1",
-        neck="Asn. Gorget +1",
+        legs="Mummu Kecks +2",
+        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
+        neck="Caro Necklace",
         waist="Grunfeld Rope",
-        left_ear="Dawn Earring",
+        left_ear="Cessance Earring",
         right_ear="Sherida Earring",
-        left_ring="Apate Ring",
-        right_ring="Karieyh Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+        left_ring="Begrudging Ring",
+        right_ring="Ilabrat Ring",
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
@@ -206,17 +206,17 @@ function init_gear_sets()
         -- CRIT RATE!!  Dex 50% mod; Grav/Transfixion
         ammo="Falcon Eye",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Mummu Jacket +2",
+        body="Meg. Cuirie +2",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs="Mummu Kecks +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
-        neck="Caro Necklace",
-        waist="Grunfeld Rope",
-        left_ear="Cessance Earring",
-        right_ear="Sherida Earring",
+        feet="Mummu Gamash. +2",
+        neck="Light Gorget",
+        waist="Shadow Belt",
+        left_ear="Sherida Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         left_ring="Begrudging Ring",
         right_ring="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+14','"Store TP"+10',}},
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {
@@ -235,23 +235,37 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         -- DAMAGE VARIES, DEX 80% mod. TP BONUS, 
         ammo="Falcon Eye",
+        head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+        hands="Meg. Gloves +2",
+        legs="Meg. Chausses +2",
+        feet="Meg. Jam. +2",
+        neck="Caro Necklace",
+        waist="Grunfeld Rope",
+        left_ear="Sherida Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        left_ring="Petrov Ring",
+        right_ring="Ilabrat Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+    })
+    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
+    sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {
+        ammo="Falcon Eye",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Meg. Cuirie +2",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
         feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
         neck="Caro Necklace",
         waist="Grunfeld Rope",
-        left_ear="Ishvara Earring",
-        right_ear="Sherida Earring",
-        left_ring="Rajas Ring",
+        left_ear="Sherida Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        left_ring="Petrov Ring",
         right_ring="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+14','"Store TP"+10',}},
-    })
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+    })
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
+
     })
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
         
@@ -358,19 +372,19 @@ function init_gear_sets()
     sets.idle = {
         main={ name="Taming Sari", augments={'STR+9','DEX+8','DMG:+14',}},
         sub="Odium",
-        ammo="Ginsen",
+        ammo="Staunch Tathlum",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body="Mummu Jacket +2",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet={ name="Herculean Boots", augments={'Attack+24','Crit. hit damage +3%','AGI+5','Accuracy+11',}},
-        neck="Lissome Necklace",
-        waist="Reiki Yotai",
-        left_ear="Suppanomimi",
-        right_ear="Sherida Earring",
-        left_ring="Epona's Ring",
-        right_ring="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+14','"Store TP"+10',}},
+        body="Meg. Cuirie +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Ahosi Leggings",
+        neck="Warder's Charm +1",
+        waist="Engraved Belt",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Moonbeam Ring",
+        back="Solemnity Cape",
     }
 
     sets.idle.Town = set_combine(sets.idle, {
@@ -390,11 +404,35 @@ function init_gear_sets()
     }
 
     sets.defense.PDT = {
-
+        ammo="Staunch Tathlum",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Meg. Cuirie +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        neck="Warder's Charm +1",
+        waist="Engraved Belt",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Moonbeam Ring",
+        back="Solemnity Cape",
     }
 
     sets.defense.MDT = {
-
+        ammo="Staunch Tathlum",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Meg. Cuirie +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        neck="Warder's Charm +1",
+        waist="Engraved Belt",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Moonbeam Ring",
+        back="Solemnity Cape",
     }
 
 
@@ -404,21 +442,19 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        main={ name="Taming Sari", augments={'STR+9','DEX+8','DMG:+14',}},
-        sub="Odium",
         ammo="Ginsen",
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Mummu Jacket +2",
         hands="Malignance Gloves",
-        feet="Ahosi leggings",
-        legs="Mummu kecks +2",
-        neck="Warder's charm +1",
-        waist="Engraved belt",
-        left_ear="Odnowa earring +1",
+        legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
+        feet="Malignance Boots",
+        neck="Lissome Necklace",
+        waist="Reiki Yotai",
+        left_ear="Cessance Earring",
         right_ear="Sherida Earring",
-        left_ring="Defending Ring",
-        right_ring="Vocane Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+14','"Store TP"+10',}},
+        left_ring="Petrov Ring",
+        right_ring="Ilabrat Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
     }
     sets.engaged.Acc = {
 
@@ -442,7 +478,19 @@ function init_gear_sets()
     }
 
     sets.engaged.PDT = {
-
+        ammo="Staunch Tathlum",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Meg. Cuirie +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        neck="Warder's Charm +1",
+        waist="Engraved Belt",
+        left_ear="Infused Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Defending Ring",
+        right_ring="Moonbeam Ring",
+        back="Solemnity Cape",
     }
     sets.engaged.Acc.PDT = {
 

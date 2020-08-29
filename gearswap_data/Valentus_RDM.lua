@@ -78,7 +78,8 @@
             body="Duelist's Tabard",
             waist="Channeler's Stone",
             left_ring="Kishar Ring",
-            legs={ name="Psycloth Lappas", augments={'MP+35','Mag. Acc.+6','"Fast Cast"+3',}},
+            left_ear="Etiolation Earring",
+            legs="Aya. Cosciales +1",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
 
@@ -100,39 +101,45 @@
 
         sets.midcast.FastRecast = {
             left_ring="Kishar Ring",
+            left_ear="Etiolation Earring",
         }
 
         sets.midcast.Cure = {
             main={name="Tamaxchi", priority=2},
-            sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -2%','HP+16 MP+16'}, priority=1},
+            sub={ name="Ammurapi Shield", priority=1},
             ammo="Kalboron Stone",
-            head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
+            head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
             body={ name="Chironic Doublet", augments={'Mag. Acc.+20','Magic dmg. taken -3%','Weapon skill damage +5%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
-            hands="Jhakri Cuffs +1",
+            hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
             legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
             feet="Jhakri Pigaches +1",
+            neck={ name="Dls. Torque +1", augments={'Path: A',}},
+            waist="Sailfi Belt +1",
+            left_ear="Thureous Earring",
+            right_ear="Gwati Earring",
+            left_ring="Ayanmo Ring",
+            right_ring="Jhakri Ring",
             back="Solemnity Cape",
-            left_ring="Fenrir Ring",
         }
 
         sets.midcast.Curaga = sets.midcast.Cure
         sets.midcast.CureSelf = sets.midcast.Cure
 
         sets.midcast['Enhancing Magic'] = {
-            main="Oranyan",
+            main={name="Oranyan", priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
-            head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
-            body="Ayanmo Corazza +2",
-            hands="Aya. Manopolas +2",
+            head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+            body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+            hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
             legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
-            feet="Jhakri Pigaches +1",
-            neck="Dls. Torque +1",
-            waist="Rumination Sash",
-            left_ear="Aqua Pearl",
-            right_ear="Andoaa Earring",
-            left_ring="Jhakri Ring",
-            right_ring="Fenrir Ring",
+            feet="Leth. Houseaux",
+            neck={ name="Dls. Torque +1", augments={'Path: A',}},
+            waist="Porous Rope",
+            left_ear="Andoaa Earring",
+            right_ear="Eabani Earring",
+            left_ring="Kishar Ring",
+            right_ring="Jhakri Ring",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
 
@@ -141,20 +148,20 @@
         sets.midcast.Stoneskin = {}
 
         sets.midcast['Enfeebling Magic'] = {
-            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
+            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
-            head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
+            head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
             body={ name="Chironic Doublet", augments={'Mag. Acc.+20','Magic dmg. taken -3%','Weapon skill damage +5%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
             hands="Aya. Manopolas +2",
             legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
-            feet="Aya. Gambieras +2",
+            feet="Jhakri Pigaches +1",
             neck={ name="Dls. Torque +1", augments={'Path: A',}},
             waist="Rumination Sash",
-            left_ear="Andoaa Earring",
-            right_ear="Aqua Pearl",
+            left_ear="Etiolation Earring",
+            right_ear="Gwati Earring",
             left_ring="Kishar Ring",
-            right_ring="Jhakri Ring",
+            right_ring="Ayanmo Ring",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
 
@@ -164,7 +171,7 @@
         sets.midcast['Slow II'] = sets.midcast['Dia III']
 
         sets.midcast['Elemental Magic'] = {
-            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
+            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
@@ -174,8 +181,8 @@
             feet="Jhakri Pigaches +1",
             neck="Dls. Torque +1",
             waist="Channeler's Stone",
-            left_ear="Aqua Pearl",
-            right_ear="Friomisi Earring",
+            right_ear="Gwati Earring",
+            left_ear="Friomisi Earring",
             left_ring="Fenrir Ring",
             right_ring="Jhakri Ring",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
@@ -184,7 +191,7 @@
         sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {})
 
         sets.midcast['Dark Magic'] = {
-            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
+            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
@@ -226,7 +233,7 @@
 
         -- Idle sets
         sets.idle = {
-            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
+            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Viti. Chapeau +1", augments={'Enfeebling Magic duration','Magic Accuracy',}},
@@ -236,7 +243,7 @@
             feet="Aya. Gambieras +2",
             neck="Dls. Torque +1",
             waist="Rumination Sash",
-            left_ear="Andoaa Earring",
+            left_ear="Etiolation Earring",
             right_ear="Eabani Earring",
             left_ring="Ayanmo Ring",
             right_ring="Fenrir Ring",
@@ -280,7 +287,7 @@
             feet="Aya. Gambieras +2",
             neck={ name="Dls. Torque +1", augments={'Path: A',}},
             waist="Rumination Sash",
-            left_ear="Andoaa Earring",
+            left_ear="Etiolation Earring",
             right_ear="Eabani Earring",
             left_ring="Ayanmo Ring",
             right_ring="Fenrir Ring",
@@ -298,7 +305,7 @@
             feet="Jhakri Pigaches +1",
             neck="Dls. Torque +1",
             waist="Channeler's Stone",
-            left_ear="Aqua Pearl",
+            left_ear="Etiolation Earring",
             right_ear="Friomisi Earring",
             left_ring="Ayanmo Ring",
             right_ring="Jhakri Ring",

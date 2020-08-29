@@ -95,16 +95,21 @@ function init_gear_sets()
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { }
-    sets.precast.JA['Futae'] = { }
+    sets.precast.JA['Futae'] = {
+        hands="Hattori Tekko +1",
+     }
     sets.precast.JA['Provoke'] = {
-        ammo="Sapience Orb",  --2
-        body="Emet Harness", --9
-        feet="Ahosi Leggings",  -- 7
-        hands="Nilas Gloves", --  --5
-        neck="Warder's Charm +1", --8
-        left_ear="Friomisi Earring", --2
-        left_ring="Supershear Ring", --5
-        right_ring="Petrov Ring", --4
+        ammo="Aqreqaq Bomblet",
+        body="Emet Harness",
+        hands="Nilas Gloves",
+        legs="Mummu Kecks +2",
+        feet="Ahosi Leggings",
+        neck="Warder's Charm +1",
+        waist="Engraved Belt",
+        left_ear="Cryptic Earring",
+        right_ear="Friomisi Earring",
+        left_ring="Petrov Ring",
+        right_ring="Supershear Ring",
     }
     sets.precast.JA['Warcry'] = sets.precast.JA['Provoke']
     sets.precast.JA['Berserk'] = sets.precast.JA['Provoke']
@@ -114,18 +119,11 @@ function init_gear_sets()
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
-        head="Hachiya Hatsuburi +1",
-        body="Rao Togi",
-        hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
-        waist="Chaac Belt",
-        legs="Nahtirah Trousers",
-        feet="Hizamaru Sune-ate +1"
     }
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
-        hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         back=Andartia.DEX,
     }
     sets.midcast.Trust =  { }
@@ -157,9 +155,12 @@ function init_gear_sets()
     -- Ranged
     --------------------------------------
 
-    sets.precast.RA = { }
+    sets.precast.RA = {
+        range="Albin Bane",
+     }
     sets.midcast.RA = {
-        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}}
+        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}},
+        range="Albin Bane",
     }
     sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
@@ -190,18 +191,20 @@ function init_gear_sets()
         head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+22','"Fast Cast"+4','MND+7','Mag. Acc.+15',}}, --11
     }
     -- macc, enfeebles
-    sets.midcast.Ninjutsu = {
-        head="Mummu Bonnet +1",  -- 38
-        body="Mummu Jacket +1", -- 40
-        hands="Mummu Wrists +1", -- 37
-        legs="Mummu Kecks +2", -- 45
-        feet="Mummu Gamash. +1",  -- 36
-        neck="Sanctity Necklace",  --10
-        waist="Eschan Stone", --7
-        left_ear="Hermetic Earring", --7 
-        left_ring="Mummu Ring",  --6
-        right_ring="Stikini Ring +1",  -- 11
-        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}},  --15
+    sets.midcast.Ninjutsu = {  -- MACC 
+        ammo="Sapience Orb",
+        head="Mummu Bonnet +1",
+        body="Mummu Jacket +2",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
+        neck="Sanctity Necklace",
+        waist="Eschan Stone",
+        left_ear="Hermetic Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Kishar Ring",
+        right_ring="Mummu Ring",
+        back="Izdubar Mantle",
     }
     -- any ninjutsu cast on self / buffs (not utsu)
     sets.midcast.SelfNinjutsu = {
@@ -209,35 +212,57 @@ function init_gear_sets()
     }
 
     sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {
-        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-        back="Andartia's Mantle", -- +1
-        feet="Hattori Kyahan", -- +1
-        body="Emet Harness",  -- +9 (enmity) / -physical d
-        left_ring="Defending Ring",
-        right_ring="Vocane Ring",
-        ammo="Staunch Tathlum",
+        head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+22','"Fast Cast"+4','MND+7','Mag. Acc.+15',}},
+        body="Emet Harness",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        neck="Twilight Torque",
+        waist="Flume Belt",
+        left_ear="Eabani Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Kishar Ring",
+        right_ring="Defending Ring",
+
+        feet="Hattori Kyahan",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
-        right_ring="Stikini Ring +1",
-        neck="Incanter's Torque",
-        back=Andartia.DEX,
+        ammo="Sapience Orb",
+        head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+22','"Fast Cast"+4','MND+7','Mag. Acc.+15',}},
+        body={ name="Taeon Tabard", augments={'"Fast Cast"+3',}},
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        legs="Gyve Trousers",
+        feet="Malignance Boots",
+        neck="Baetyl Pendant",
+        waist="Reiki Yotai",
+        left_ear="Eabani Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Kishar Ring",
+        right_ring="Defending Ring",
     })  
 
     -- Nuking Ninjutsu (skill / magic attack / int)
+    -- Ni scales better with MAB, aim for 26k~ mb
+    -- SAN scales better with INT, aim for 30k mb
+    -- always use ambu weapons (gotokai + tauret)
     sets.midcast.ElementalNinjutsu = {
-        head={ name="Mochi. Hatsuburi +2", augments={'Increases elem. ninjutsu III damage',}},
+        main="Kikoku",
+        sub="Kaja Sword",
+        range="Albin Bane",
+        head={ name="Mochi. Hatsuburi +2", augments={'Enhances "Yonin" and "Innin" effect',}},
         body={ name="Samnuha Coat", augments={'Mag. Acc.+13','"Mag.Atk.Bns."+14','"Fast Cast"+3','"Dual Wield"+4',}},
-        hands="Hattori Tekko +1",
-        legs="Mummu Kecks +2",
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        legs="Gyve Trousers",
         feet={ name="Herculean Boots", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit.hit rate+1','Mag. Acc.+14','"Mag.Atk.Bns."+14',}},
         neck="Baetyl Pendant",
         waist="Eschan Stone",
-        left_ear="Friomisi Earring",
-        right_ear="Hermetic Earring",
-        left_ring="Mujin Band",
-        right_ring="Stikini Ring +1",
-        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}},
+        left_ear="Hermetic Earring",
+        right_ear="Friomisi Earring",
+        left_ring="Dingir Ring",
+        right_ring="Mujin Band",
+        --back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        back="Izdubar Mantle",
     }
 
     -- Effusions
@@ -249,36 +274,20 @@ function init_gear_sets()
         main="Kikoku",
         sub={ name="Kanaria", augments={'"Triple Atk."+2','DEX+15','Accuracy+12','Attack+13','DMG:+10',}},
         ammo="Togakushi Shuriken",
-        head={ name="Mochi. Hatsuburi +2", augments={'Increases elem. ninjutsu III damage',}},
-        body="Hiza. Haramaki +1",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Lissome Necklace",
-        waist="Windbuffet Belt +1",
-        left_ear="Odnowa Earring +1",
-        right_ear="Infused Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        feet="Malignance Boots",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
+        waist="Reiki Yotai",
+        left_ear="Eabani Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Gere Ring",
+        right_ring="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
-    sets.idle.Town =  {
-        main="Kikoku",
-        sub={ name="Kanaria", augments={'"Triple Atk."+2','DEX+15','Accuracy+12','Attack+13','DMG:+10',}},
-        ammo="Togakushi Shuriken",
-        head={ name="Mochi. Hatsuburi +2", augments={'Increases elem. ninjutsu III damage',}},
-        body="Hiza. Haramaki +1",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        legs="Mummu Kecks +2",
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Lissome Necklace",
-        waist="Windbuffet Belt +1",
-        left_ear="Odnowa Earring +1",
-        right_ear="Infused Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-    }
+    sets.idle.Town =  sets.idle
 
     sets.Adoulin = {
         body="Councilor's Garb",
@@ -288,32 +297,40 @@ function init_gear_sets()
     --       ALT F12 REMOVES EMERGENCY DEFENSIVE SET 
     --       ALT F12 REMOVES EMERGENCY DEFENSIVE SET 
     --       ALT F12 REMOVES EMERGENCY DEFENSIVE SET 
+    ---------------------------------------------------------------        
     -- Defense sets:
     -- PRESS F10 !!!!!!!
     sets.defense.PDT = {
         ammo="Staunch Tathlum",
-        head="Skormoth Mask",
-        body="Emet Harness",
-        hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Ahosi Leggings",
+        feet="Malignance Boots",
         neck="Twilight Torque",
-        waist="Flume Belt",
-        left_ear="Odnowa Earring +1",
-        right_ear="Infused Earring",
+        waist="Reiki Yotai",
+        left_ear="Cryptic Earring",
+        right_ear="Eabani Earring",
         left_ring="Defending Ring",
         right_ring="Vocane Ring",
-        back="Solemnity Cape",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
-    -- PRESS F11 !!!!!!!!!!!!!!!!
+    -- PRESS F11 !!!!!!!!!!!!!!!!  ------------------------------
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head={ name="Mochi. Hatsuburi +2", augments={'Increases elem. ninjutsu III damage',}},
-        body="Mummu Jacket +1",
-        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        ammo="Staunch Tathlum",
+        head="Mummu Bonnet +1",
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
+        legs="Mummu Kecks +2",
+        feet="Malignance Boots",
         neck="Warder's Charm +1",
         waist="Engraved Belt",
-        right_ear="Hearty Earring",
+        left_ear="Odnowa Earring +1",
+        right_ear="Eabani Earring",
+        left_ring="Defending Ring",
+        right_ring="Vengeful Ring",
+        back="Solemnity Cape",
     })
     -------------------------------------------------------------
     --       ALT F12 REMOVES EMERGENCY DEFENSIVE SET 
@@ -328,18 +345,17 @@ function init_gear_sets()
 
     -- Normal melee group without buffs
     sets.engaged = {
-        ammo=gear.RegularAmmo,
         head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
+        body="Ken. Samue +1",
         hands={ name="Floral Gauntlets", augments={'Rng.Acc.+14','Accuracy+13','"Triple Atk."+2','Magic dmg. taken -3%',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet="Hiza. Sune-Ate +1",
-        neck="Lissome Necklace",
+        feet="Hiza. Sune-Ate +2",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Reiki Yotai",
-        left_ear="Cessance Earring",
+        left_ear="Eabani Earring",
         right_ear="Suppanomimi",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
@@ -350,8 +366,8 @@ function init_gear_sets()
         body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
         hands={ name="Floral Gauntlets", augments={'Rng.Acc.+14','Accuracy+13','"Triple Atk."+2','Magic dmg. taken -3%',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet="Hiza. Sune-Ate +1",
-        neck="Lissome Necklace",
+        feet="Hiza. Sune-Ate +2",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Windbuffet Belt +1",
         left_ear="Cessance Earring",
         right_ear="Suppanomimi",
@@ -366,19 +382,18 @@ function init_gear_sets()
 ----------------------------------------------------------------------
     -- Defenseive sets
     sets.NormalPDT = {
-        ammo="Staunch Tathlum",
-        head="Skormoth Mask",
-        body="Emet Harness",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands="Malignance Gloves",
         legs="Mummu Kecks +2",
-        feet="Ahosi Leggings",
+        feet="Malignance Boots",
         neck="Twilight Torque",
-        waist="Flume Belt",
-        left_ear="Odnowa Earring +1",
-        right_ear="Infused Earring",
-        left_ring="Defending Ring",
-        right_ring="Vocane Ring",
-        back="Solemnity Cape",
+        waist="Engraved Belt",
+        left_ear="Cessance Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Gere Ring",
+        right_ring="Defending Ring",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
     sets.engaged.PDT = sets.NormalPDT
@@ -388,23 +403,24 @@ function init_gear_sets()
     sets.engaged.HastePDT = sets.NormalPDT
 --------------------------------------------------------------------
     -- Delay Cap from spell + songs alone
+    -- Only 1 DW needed
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         ammo=gear.RegularAmmo,
-        head="Skormoth Mask",
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Lissome Necklace",
-        waist="Windbuffet Belt +1",
+        feet="Malignance Boots",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
+        waist="Kentarch Belt",
         left_ear="Cessance Earring",
         right_ear="Brutal Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
-    -- Base set for hard content
 
+    -- Base set for hard content
     sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {head="Hattori Zukin +1"})
 
     -- Defensive sets
@@ -420,12 +436,12 @@ function init_gear_sets()
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
         feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
-        neck="Lissome Necklace",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Windbuffet Belt +1",
         left_ear="Cessance Earring",
         right_ear="Brutal Earring",
         left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        right_ring="Gere Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
@@ -440,27 +456,25 @@ function init_gear_sets()
 
     sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
 
-    -- 30% Haste 1626 / 798
+    -- 30% Haste 1626 / 798. 21 DW needed (T5, 35 from Lv85 NIN)
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         ammo=gear.RegularAmmo,
-        head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet="Hiza. Sune-Ate +1",
-        neck="Lissome Necklace",
+        feet="Hiza. Sune-Ate +2",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Reiki Yotai",
-        left_ear="Cessance Earring",
+        left_ear="Suppanomimi",
         right_ear="Brutal Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         ammo=gear.RegularAmmo,
-        head="Hattori Zukin +1",
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
     })
 
 
@@ -468,36 +482,36 @@ function init_gear_sets()
 
     sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
 
-    -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
+    -- haste 1 spell 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         ammo=gear.RegularAmmo,
         head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands={ name="Floral Gauntlets", augments={'Rng.Acc.+14','Accuracy+13','"Triple Atk."+2','Magic dmg. taken -3%',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet="Hiza. Sune-Ate +1",
-        neck="Lissome Necklace",
+        feet="Hiza. Sune-Ate +2",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Reiki Yotai",
-        left_ear="Cessance Earring",
-        right_ear="Suppanomimi",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ear="Suppanomimi",
+        right_ear="Brutal Earring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
     sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
         ammo=gear.RegularAmmo,
         head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body="Ken. Samue +1",
+        hands={ name="Floral Gauntlets", augments={'Rng.Acc.+14','Accuracy+13','"Triple Atk."+2','Magic dmg. taken -3%',}},
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-        feet="Hiza. Sune-Ate +1",
-        neck="Lissome Necklace",
+        feet="Hiza. Sune-Ate +2",
+        neck={ name="Ninja Nodowa +1", augments={'Path: A',}},
         waist="Reiki Yotai",
-        left_ear="Cessance Earring",
-        right_ear="Suppanomimi",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ear="Suppanomimi",
+        right_ear="Brutal Earring",
+        left_ring="Gere Ring",
+        right_ring="Epona's Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
@@ -520,38 +534,39 @@ function init_gear_sets()
         head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
         body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
         hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +1",
+        legs="Hiza. Hizayoroi +2",
+        feet="Mummu Gamash. +2",
         neck="Caro Necklace",
         waist="Grunfeld Rope",
         left_ear="Cessance Earring",
         right_ear="Ethereal Earring",
         left_ring="Rajas Ring",
         right_ring="Petrov Ring",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
     sets.Kamu = {
         ammo="Ginsen",
         back=Andartia.AGI,
-        legs="Hizamaru Hizayoroi +1",
+        legs="Hiza. Hizayoroi +2",
         feet={ name="Herculean Boots", augments={'"Triple Atk."+4','AGI+2','Accuracy+12',}},
     }
 
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
 
     sets.precast.WS['Blade: Metsu'] = {
-        ammo="Demonry Core",
-        head={ name="Herculean Helm", augments={'Attack+1','Weapon skill damage +4%','Accuracy+9',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
+        ammo="Aqreqaq Bomblet",
+        head={ name="Mochi. Hatsuburi +2", augments={'Enhances "Yonin" and "Innin" effect',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Jokushu Haidate",
-        feet={ name="Herculean Boots", augments={'Weapon skill damage +3%','Accuracy+8','Attack+3',}},
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
         neck="Caro Necklace",
         waist="Grunfeld Rope",
-        left_ear="Ishvara Earring",
-        right_ear="Cessance Earring",
-        left_ring="Rajas Ring",
-        right_ring="Petrov Ring",
+        left_ear="Brutal Earring",
+        right_ear="Ishvara Earring",
+        left_ring="Gere Ring",
+        right_ring="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
@@ -570,37 +585,39 @@ function init_gear_sets()
 
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --dark belt / gorget?   
-        head="Mummu Bonnet +1", --4 crit
-        body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}}, --4 crit
-        hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}}, --4 crit
-        legs="Mummu Kecks +2", --4 crit
-        feet="Mummu Gamash. +1", --4 crit
+        --dark belt / gorget?
+        ammo="Aqreqaq Bomblet",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+        hands="Mummu Wrists +2",
+        legs="Hiza. Hizayoroi +2",
+        feet="Mummu Gamash. +2",
         neck="Caro Necklace",
         waist="Grunfeld Rope",
-        left_ear="Brutal Earring",
-        right_ear="Ishvara Earring",  --2 wsd
-        left_ring="Begrudging Ring", --5 crit
-        right_ring="Mummu Ring", -- 3
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},  --wsd?
+        left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        right_ear="Ishvara Earring",
+        left_ring="Ilabrat Ring",
+        right_ring="Begrudging Ring",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     })
 
 
     -- BLADE: SHUN
-    sets.Shun = {
-        --flame belt / gorget?
-        ammo="Ginsen",
-        head="Mummu Bonnet +1", --4 crit
-        body="Mummu Jacket +1",
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    -- best in lower buff situations
+    sets.Shun = {  -- (light) / fusion / impaction, fTP 1.0 (big change from +0.1 ~10%)
+    -- LOGICAL COMMENTS: "this always shocks me but it really apears as if Shun's damage isn't boosted much by WSD as no other wsd gear rises to the top in these sets either."
+        ammo="Aqreqaq Bomblet",
+        head={ name="Mochi. Hatsuburi +2", augments={'Enhances "Yonin" and "Innin" effect',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
+        hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Jokushu Haidate",
-        feet="Mummu Gamash. +1",
-        neck="Caro Necklace",
-        waist="Grunfeld Rope",
+        feet={ name="Herculean Boots", augments={'MND+8','Attack+30','Quadruple Attack +2','Accuracy+6 Attack+6',}},
+        neck="Light Gorget",
+        waist="Light Belt",
         left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         right_ear="Brutal Earring",
-        left_ring="Epona's Ring",
-        right_ring="Petrov Ring",
+        left_ring="Apate Ring",
+        right_ring="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
 
@@ -628,74 +645,73 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
 
     -- damage varies:
-    sets.Ten = {
+    sets.Ten = { -- tp bonus and WSD!~
         ammo="Aqreqaq Bomblet",
-        head={ name="Herculean Helm", augments={'Attack+1','Weapon skill damage +4%','Accuracy+9',}},
-        body={ name="Herculean Vest", augments={'Accuracy+18 Attack+18','Weapon skill damage +3%','DEX+6','Accuracy+11','Attack+6',}},
+        head={ name="Herculean Helm", augments={'"Dbl.Atk."+2','"Triple Atk."+3','Weapon skill damage +4%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+        body={ name="Herculean Vest", augments={'Accuracy+11 Attack+11','Weapon skill damage +4%','STR+15','Attack+6',}},
         hands={ name="Herculean Gloves", augments={'Attack+6','Weapon skill damage +4%','AGI+2','Accuracy+13',}},
         legs="Hiza. Hizayoroi +2",
-        feet={ name="Herculean Boots", augments={'Weapon skill damage +3%','Accuracy+8','Attack+3',}},
+        feet="Hiza. Sune-Ate +2",
         neck="Caro Necklace",
         waist="Grunfeld Rope",
-        left_ear="Ishvara Earring",
-        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-        left_ring="Rajas Ring",
-        right_ring="Petrov Ring",
-        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}},
+        left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        right_ear="Ishvara Earring",
+        left_ring="Gere Ring",
+        right_ring="Ilabrat Ring",
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
     }
     sets.precast.WS['Blade: Ten'] = sets.Ten
 
-    sets.precast.WS['Tachi: Gekko'] = {
-        ammo="Amar Cluster",
-        head="Mummu Bonnet +1",
-        body="Hiza. Haramaki +1",
-        hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +1",
-        neck="Caro Necklace",
-        waist="Grunfeld Rope",
-        left_ear="Cessance Earring",
-        right_ear="Ishvara Earring",
-        left_ring="Rajas Ring",
-        right_ring="Petrov Ring",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-    }
+    sets.precast.WS['Tachi: Gekko'] = sets.Ten
 
-    sets.precast.WS['Tachi: Ageha'] = {
-        ammo="Amar Cluster",
-        head="Mummu Bonnet +1",
-        body="Mummu Jacket +1",
-        hands="Mummu Wrists +1",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +1",
-        neck="Caro Necklace",
-        waist="Eschan Stone",
-        left_ear="Cessance Earring",
-        right_ear="Hermetic Earring",
-        left_ring="Rajas Ring",
-        right_ring="Stikini Ring +1",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-    }
+    sets.precast.WS['Tachi: Ageha'] = sets.midcast.Ninjutsu  -- acc/macc
 
     --ELEMENTAL WS / HYBRID: 
-    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, sets.midcast.ElementalNinjutsu)
-    sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-      
-    })
+    sets.precast.WS['Aeolian Edge'] = {
+        ammo="Aqreqaq Bomblet",
+        head={ name="Mochi. Hatsuburi +2", augments={'Enhances "Yonin" and "Innin" effect',}},
+        body={ name="Samnuha Coat", augments={'Mag. Acc.+13','"Mag.Atk.Bns."+14','"Fast Cast"+3','"Dual Wield"+4',}},
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        legs={ name="Herculean Trousers", augments={'Rng.Atk.+23','Attack+30','Weapon skill damage +5%','Accuracy+7 Attack+7','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+        feet={ name="Herculean Boots", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit.hit rate+1','Mag. Acc.+14','"Mag.Atk.Bns."+14',}},
+        neck="Sanctity Necklace",
+        waist="Eschan Stone",
+        left_ear="Friomisi Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        left_ring="Dingir Ring",
+        right_ring="Gere Ring",
+        back="Izdubar Mantle",
+    }
+    sets.precast.WS['Blade: Chi'] = {
+        ammo="Aqreqaq Bomblet",
+        head={ name="Mochi. Hatsuburi +2", augments={'Enhances "Yonin" and "Innin" effect',}},
+        body={ name="Samnuha Coat", augments={'Mag. Acc.+13','"Mag.Atk.Bns."+14','"Fast Cast"+3','"Dual Wield"+4',}},
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        legs={ name="Herculean Trousers", augments={'Rng.Atk.+23','Attack+30','Weapon skill damage +5%','Accuracy+7 Attack+7','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+        feet={ name="Herculean Boots", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit.hit rate+1','Mag. Acc.+14','"Mag.Atk.Bns."+14',}},
+        neck="Sanctity Necklace",
+        waist="Eschan Stone",
+        left_ear="Friomisi Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+        left_ring="Dingir Ring",
+        right_ring="Gere Ring",
+        back="Izdubar Mantle",
+    }
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
     sets.precast.WS['Blade: Ei'] = {
+        ammo="Aqreqaq Bomblet",
         head="Pixie Hairpin +1",
         body={ name="Samnuha Coat", augments={'Mag. Acc.+13','"Mag.Atk.Bns."+14','"Fast Cast"+3','"Dual Wield"+4',}},
         hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-        legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','"Fast Cast"+4','INT+7','"Mag.Atk.Bns."+9',}},
+        legs={ name="Herculean Trousers", augments={'Rng.Atk.+23','Attack+30','Weapon skill damage +5%','Accuracy+7 Attack+7','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
         feet={ name="Herculean Boots", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit.hit rate+1','Mag. Acc.+14','"Mag.Atk.Bns."+14',}},
-        neck="Baetyl Pendant",
+        neck="Sanctity Necklace",
         waist="Eschan Stone",
-        left_ear="Hecate's Earring",
-        right_ear="Friomisi Earring",
+        left_ear="Friomisi Earring",
+        right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         left_ring="Dingir Ring",
         right_ring="Archon Ring",
-        back={ name="Yokaze Mantle", augments={'STR+2','DEX+1','Sklchn.dmg.+2%','Weapon skill damage +5%',}},
+        back="Izdubar Mantle",
     }
     sets.precast.WS['Blade: Yu'] = sets.midcast.ElementalNinjutsu
 

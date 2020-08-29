@@ -51,12 +51,12 @@ function get_sets()
     sets.TP.Hybrid = {
         sub="Utu Grip",
         ammo="Ginsen",
-        head="Aya. Zucchetto +2",
+        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body="Ayanmo Corazza +2",
         hands="Turms Mittens +1",
         legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
         feet="Turms Leggings +1",
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
         waist="Ioskeha Belt +1",
         left_ear="Odnowa Earring +1",
         right_ear="Sherida Earring",
@@ -64,7 +64,7 @@ function get_sets()
         right_ring="Moonbeam Ring",
         back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
-
+    
     --full DT melee set (all dt set)
     sets.TP.DT = {
         sub="Refined Grip +1",

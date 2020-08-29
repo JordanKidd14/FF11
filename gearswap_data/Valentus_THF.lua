@@ -75,9 +75,11 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {
+    sets.TreasureHunter = {  -- 8 + 3 = 12
         hands="Plunderer's Armlets +1",  --3
-        waist="Chaac Belt" --1
+        waist="Chaac Belt", --1
+        head={ name="Herculean Helm", augments={'Enmity-2','STR+4','"Treasure Hunter"+2','Accuracy+13 Attack+13',}},  --2
+        legs={ name="Herculean Trousers", augments={'VIT+4','DEX+6','"Treasure Hunter"+2',}},  -- 2
         --sub={ name="Sandung", augments={'Accuracy+50','Crit. hit rate+5%','"Triple Atk."+3',}},
     }
     sets.ExtraRegen = {}
@@ -139,7 +141,7 @@ function init_gear_sets()
 
     -- Ranged snapshot gear / 
     sets.precast.RA = {
-        head="Aurore Beret",
+       
     }
 
 
@@ -151,7 +153,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Mummu Bonnet +1",
-        body="Meg. Cuirie +1",
+        body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
         feet="Mummu Gamash. +1",
@@ -204,7 +206,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         -- CRIT RATE!!  Dex 50% mod; Grav/Transfixion
         head="Mummu Bonnet +1", 
-        body="Meg. Cuirie +1",
+        body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Mummu Kecks +1",
         feet="Mummu Gamash. +1",  --3
@@ -286,7 +288,7 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = {
         -- DAMAGE VARIES AOE wind damage, DEX40, INT40 (focus int, as used in dSTAT calc for damage)
         head={ name="Herculean Helm", augments={'Weapon skill damage +2%','"Mag.Atk.Bns."+17','Accuracy+2 Attack+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
-        body={ name="Herculean Vest", augments={'Weapon skill damage +5%','Accuracy+2','Accuracy+17 Attack+17','Mag. Acc.+2 "Mag.Atk.Bns."+2',}},
+        body={ name="Herculean Vest", augments={'Attack+4','"Store TP"+2','Quadruple Attack +3','Accuracy+17 Attack+17','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
         hands="Meg. Gloves +2",
         legs={ name="Herculean Trousers", augments={'Mag. Acc.+16 "Mag.Atk.Bns."+16','"Fast Cast"+3','INT+1','"Mag.Atk.Bns."+15',}},
         feet="Mummu Gamash. +1",
@@ -318,7 +320,7 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {
         head="Mummu Bonnet +1",
-        body="Meghanada Cuirie +1",
+        body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
         feet="Mummu Gamash. +1",
@@ -348,7 +350,7 @@ function init_gear_sets()
         sub={ name="Skinflayer", augments={'Crit. hit damage +5%','DEX+6','Accuracy+10','Attack+20','DMG:+4',}},
         range="Wingcutter +1",
         head="Mummu Bonnet +1",
-        body={ name="Plunderer's Vest +1", augments={'Enhances "Ambush" effect',}},
+        body="Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
         feet="Jute Boots +1",
@@ -392,18 +394,19 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
+        range="Wingcutter +1",
         head="Mummu Bonnet +1",
-        body={ name="Herculean Vest", augments={'Accuracy+11','"Triple Atk."+3','AGI+7',}},
+        body={ name="Herculean Vest", augments={'Attack+4','"Store TP"+2','Quadruple Attack +3','Accuracy+17 Attack+17','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs="Meg. Chausses +2",
         feet={ name="Plun. Poulaines +1", augments={'Enhances "Assassin\'s Charge" effect',}},
-        neck="Asn. Gorget +1",
-        waist="Patentia Sash",
+        neck={ name="Asn. Gorget +1", augments={'Path: A',}},
+        waist="Kentarch Belt +1",
         left_ear="Eabani Earring",
         right_ear="Sherida Earring",
         left_ring="Epona's Ring",
         right_ring="Hetairoi Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
     sets.engaged.Acc = {
 

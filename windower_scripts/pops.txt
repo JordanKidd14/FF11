@@ -1,0 +1,5 @@
+send @all findall smol
+wait 1;
+send @all findall sandy
+wait 1;
+send @all findall tabli
