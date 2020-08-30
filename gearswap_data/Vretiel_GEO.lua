@@ -415,20 +415,20 @@ function get_sets()
 	
 	-- Nuking
     sets.midcast.nuking.normal = set_combine(sets.midcast.casting,{
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        main="Eletta Rod",
         sub="Ammurapi Shield",
         range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Jhakri Coronal +1",
         body="Jhakri Robe +2",
         hands="Jhakri Cuffs +1",
-        legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+11%','CHR+6','Mag. Acc.+3',}},
-        feet={ name="Merlinic Crackows", augments={'Weapon skill damage +3%','Weapon Skill Acc.+7','"Treasure Hunter"+2','Accuracy+8 Attack+8','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
+        legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+24','Attack+8','Accuracy+16 Attack+16','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+        feet={ name="Merlinic Crackows", augments={'"Cure" spellcasting time -2%','CHR+9','Magic burst dmg.+15%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
         neck="Bagua Charm +2",
         waist="Belisama's Rope +1",
         left_ear="Handler's Earring +1",
         right_ear="Gifted Earring",
-        left_ring="Mallquis Ring",
-        right_ring="Acumen Ring",
+        left_ring="Acumen Ring",
+        right_ring="Mallquis Ring",
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
     })
 	sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {

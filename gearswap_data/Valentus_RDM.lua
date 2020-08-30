@@ -109,9 +109,9 @@
             sub={ name="Ammurapi Shield", priority=1},
             ammo="Kalboron Stone",
             head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
-            body={ name="Chironic Doublet", augments={'Mag. Acc.+20','Magic dmg. taken -3%','Weapon skill damage +5%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+            body={ name="Chironic Doublet", augments={'INT+9','Mag. Acc.+10','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
             hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
+            legs={ name="Chironic Hose", augments={'Crit.hit rate+2','DEX+12','"Refresh"+2',}},
             feet="Jhakri Pigaches +1",
             neck={ name="Dls. Torque +1", augments={'Path: A',}},
             waist="Sailfi Belt +1",
@@ -125,65 +125,75 @@
         sets.midcast.Curaga = sets.midcast.Cure
         sets.midcast.CureSelf = sets.midcast.Cure
 
-        sets.midcast['Enhancing Magic'] = {
-            main={name="Oranyan", priority=2},
+        sets.midcast['Enhancing Magic'] = {  -- +90%
+            main={name="Oranyan", priority=2},  -- 10
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
             body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
             hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
-            feet="Leth. Houseaux",
-            neck={ name="Dls. Torque +1", augments={'Path: A',}},
+            legs="Jhakri Slops +2",
+            feet="Leth. Houseaux",  --25
+            neck={ name="Dls. Torque +1", augments={'Path: A',}},  -- 10~20
             waist="Porous Rope",
             left_ear="Andoaa Earring",
             right_ear="Eabani Earring",
             left_ring="Kishar Ring",
             right_ring="Jhakri Ring",
+            back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},  --20
+        }
+
+        sets.midcast.Refresh = {
+            head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+            body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+            hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
 
-        sets.midcast.Refresh = {}
-
-        sets.midcast.Stoneskin = {}
+        sets.midcast.Stoneskin = {
+            head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
+            body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+            hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9',}},
+            back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+        }
 
         sets.midcast['Enfeebling Magic'] = {
             main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
-            body={ name="Chironic Doublet", augments={'Mag. Acc.+20','Magic dmg. taken -3%','Weapon skill damage +5%','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
-            hands="Aya. Manopolas +2",
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
+            body="Jhakri Robe +2",
+            hands="Jhakri Cuffs +1",
+            legs="Jhakri Slops +2",
             feet="Jhakri Pigaches +1",
             neck={ name="Dls. Torque +1", augments={'Path: A',}},
             waist="Rumination Sash",
             left_ear="Etiolation Earring",
             right_ear="Gwati Earring",
             left_ring="Kishar Ring",
-            right_ring="Ayanmo Ring",
+            right_ring="Jhakri Ring",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
 
         sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {
             head={ name="Viti. Chapeau +1", augments={'Enfeebling Magic duration','Magic Accuracy',}},
         })
-        sets.midcast['Slow II'] = sets.midcast['Dia III']
+        sets.midcast['Slow II'] = sets.midcast['Enfeebling Magic']
 
         sets.midcast['Elemental Magic'] = {
-            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',},priority=2},
+            main={ name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+18','"Mag.Atk.Bns."+15',}},
             sub="Enki Strap",
             ammo="Kalboron Stone",
             head={ name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+5%','Mag. Acc.+10',}},
-            body="Jhakri Robe +2",
+            body={ name="Merlinic Jubbah", augments={'Pet: "Dbl. Atk."+2','Pet: Attack+4 Pet: Rng.Atk.+4','Magic burst dmg.+15%','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
             hands="Jhakri Cuffs +1",
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
+            legs="Jhakri Slops +2",
             feet="Jhakri Pigaches +1",
-            neck="Dls. Torque +1",
+            neck={ name="Dls. Torque +1", augments={'Path: A',}},
             waist="Channeler's Stone",
-            right_ear="Gwati Earring",
-            left_ear="Friomisi Earring",
-            left_ring="Fenrir Ring",
+            left_ear="Gwati Earring",
+            right_ear="Friomisi Earring",
+            left_ring="Locus Ring",
             right_ring="Jhakri Ring",
             back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
         }
@@ -197,7 +207,7 @@
             head={ name="Chironic Hat", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Mag. Acc.+27','Accuracy+20 Attack+20',}},
             body="Jhakri Robe +2",
             hands="Jhakri Cuffs +1",
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
+            legs="Jhakri Slops +2",
             feet="Jhakri Pigaches +1",
             neck="Dls. Torque +1",
             waist="Channeler's Stone",
@@ -239,7 +249,7 @@
             head={ name="Viti. Chapeau +1", augments={'Enfeebling Magic duration','Magic Accuracy',}},
             body="Jhakri Robe +2",
             hands="Aya. Manopolas +2",
-            legs={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Conserve MP"+3','Mag. Acc.+11',}},
+            legs={ name="Chironic Hose", augments={'Crit.hit rate+2','DEX+12','"Refresh"+2',}},
             feet="Aya. Gambieras +2",
             neck="Dls. Torque +1",
             waist="Rumination Sash",

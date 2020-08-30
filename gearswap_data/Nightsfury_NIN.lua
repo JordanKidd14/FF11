@@ -567,7 +567,7 @@ function init_gear_sets()
         right_ear="Ishvara Earring",
         left_ring="Gere Ring",
         right_ring="Ilabrat Ring",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     }
 
     -- BLADE: JIN
@@ -598,7 +598,7 @@ function init_gear_sets()
         right_ear="Ishvara Earring",
         left_ring="Ilabrat Ring",
         right_ring="Begrudging Ring",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
 
 

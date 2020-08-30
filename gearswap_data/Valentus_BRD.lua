@@ -393,7 +393,7 @@ function init_gear_sets()
 		head="Inyanga Tiara +2",
 		body="Ayanmo Corazza +2",
 		hands="Inyan. Dastanas +2",
-		legs="Inyanga Shalwar +2",
+		legs={ name="Chironic Hose", augments={'Crit.hit rate+2','DEX+12','"Refresh"+2',}},
 		feet="Aya. Gambieras +2",
 		neck="Bathy Choker +1",
 		waist="Sailfi Belt +1",
@@ -448,7 +448,7 @@ function init_gear_sets()
     sets.latent_refresh = {
 		main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1'}, priority=2},
 		sub={ name="Ammurapi Shield", priority=1},
-		legs="Inyanga Shalwar +2",
+		legs={ name="Chironic Hose", augments={'Crit.hit rate+2','DEX+12','"Refresh"+2',}},
 		left_ring="Inyanga Ring",
 		waist="Fucho-no-obi"
 	}

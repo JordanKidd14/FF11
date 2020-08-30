@@ -53,12 +53,13 @@ function job_setup()
 
     spirits = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
     avatars = S{"Carbuncle", "Fenrir", "Diabolos", "Ifrit", "Titan", "Leviathan", "Garuda", "Shiva", "Ramuh", "Odin", "Alexander", "Cait Sith", "Siren"}
-
+    fenrirImpact = S{'Impact'}
+    hybridPacts = S{'Flaming Crush'}
     magicalRagePacts = S{
         'Inferno','Earthen Fury','Tidal Wave','Aerial Blast','Diamond Dust','Judgment Bolt','Searing Light','Howling Moon','Ruinous Omen',
         'Fire II','Stone II','Water II','Aero II','Blizzard II','Thunder II',
         'Fire IV','Stone IV','Water IV','Aero IV','Blizzard IV','Thunder IV',
-        'Thunderspark','Burning Strike','Meteorite','Nether Blast','Flaming Crush',
+        'Thunderspark','Burning Strike','Meteorite','Nether Blast',
         'Meteor Strike','Heavenly Strike','Wind Blade','Geocrush','Grand Fall','Thunderstorm',
         'Holy Mist','Lunar Bay','Night Terror','Level ? Holy','Tornado II','Sonic Buffet','Clarsach Call'}
 
@@ -150,12 +151,18 @@ function init_gear_sets()
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
 
     sets.precast.JA['Elemental Siphon'] = {  
-        waist="Lucidity Sash",
-        right_ear="Andoaa Earring",  --5
-        right_ring="Evoker's Ring", --10
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+        sub="Vox Grip",
+        head="Beckoner's Horn +1",
+        body="Baayami Robe",
         hands="Lamassu Mitts",
-        legs="Baayami Slops",  -- 30
-        head="Beckoner's Horn +1",  --13
+        legs="Baayami Slops",
+        feet="Baayami Sabots",
+        neck="Caller's Pendant",
+        waist="Lucidity Sash",
+        left_ear="Andoaa Earring",
+        left_ring="Fervor Ring",
+        right_ring="Evoker's Ring",
      }
 
     sets.precast.JA['Mana Cede'] = {}
@@ -169,25 +176,19 @@ function init_gear_sets()
     -- Pact delay reduction gear -------------------------------------
     -- Pact delay reduction gear -------------------------------------
     sets.precast.BloodPactWard = {
-        -- III 5 / 10
+        -- III 10 / 10
         --- [X] JP [100]  --5
-        --- [] JP [1200]  --5
+        --- [x] JP [1200]  --5
 
-        -- II 9 / 15
-        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}, priority=2},  --2
-        sub={name="Vox Grip", priority=1},
+        -- II 7 / 15
         ammo="Sancus Sachet +1",  --7
-        -- body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}, --3
-
         -- I 15 / 15
-        left_ear="Evans Earring",  --2
         body="Shomonjijoe +1",  --8
-        hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},  --6
-
+        legs="Baayami Slops", --  7
         -- WHY NOT?  ------------
-        legs="Baayami Slops",  -- 30
-        head="Beckoner's Horn +1",  --13
+        head="Beckoner's Horn +1",  --13 + favor+3
         waist="Lucidity Sash",
+        hands="Inyan. Dastanas +2",
         right_ear="Andoaa Earring",  --5
         right_ring="Evoker's Ring", --10
         feet="Baayami Sabots",
@@ -340,6 +341,46 @@ function init_gear_sets()
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
 
     })
+
+    sets.midcast.Pet.FenrirImpact= set_combine(sets.midcast.Pet.BloodPactWard, {
+        -- SMN skill 600 = -32 all stats, then focus on macc
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+        sub="Vox Grip",
+        ammo="Sancus Sachet +1",
+        head="Beckoner's Horn +1",
+        body="Baayami Robe",
+        hands="Lamassu Mitts",
+        legs="Baayami Slops",
+        feet="Baayami Sabots",
+        neck={ name="Smn. Collar +1", augments={'Path: A',}},
+        waist="Lucidity Sash",
+        left_ear="Andoaa Earring",
+        right_ear="Eabani Earring",
+        left_ring="Fervor Ring",
+        right_ring="Evoker's Ring",
+        back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},
+    })
+    sets.midcast.Pet.FenrirImpact.Acc = sets.midcast.Pet.FenrirImpact
+
+    sets.midcast.Pet.HybridPacts = set_combine(sets.midcast.Pet.BloodPactWard, {
+        -- FLAMING CRUSH
+        main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+        sub="Elan Strap +1",
+        ammo="Sancus Sachet +1",
+        head={ name="Apogee Crown +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
+        body={ name="Apo. Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
+        hands={ name="Merlinic Dastanas", augments={'Pet: Attack+10 Pet: Rng.Atk.+10','Blood Pact Dmg.+10','Pet: Mag. Acc.+11','Pet: "Mag.Atk.Bns."+8',}},
+        legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
+        feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
+        neck={ name="Smn. Collar +1", augments={'Path: A',}},
+        waist="Klouskap Sash",
+        left_ear="Andoaa Earring",
+        right_ear="Gelos Earring",
+        left_ring= {name="Varar Ring +1", bag="wardrobe1"},
+        right_ring= {name="Varar Ring +1", bag="wardrobe2"},
+        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','"Fast Cast"+10',}},
+    })
+    sets.midcast.Pet.HybridPacts.Acc = sets.midcast.Pet.HybridPacts
 
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
 
@@ -626,6 +667,12 @@ function job_get_spell_map(spell)
     if spell.type == 'BloodPactRage' then
         if magicalRagePacts:contains(spell.english) then
             return 'MagicalBloodPactRage'
+        elseif fenrirImpact:contains(spell.english) then
+            --add_to_chat(122, "Special FenrirImpact set applied!")
+            return 'FenrirImpact'
+        elseif hybridPacts:contains(spell.english) then
+            add_to_chat(122, "Special Hybrid set applied!")
+            return 'HybridPacts'
         else
             return 'PhysicalBloodPactRage'
         end

@@ -71,17 +71,17 @@ function get_sets()
         ammo="Staunch Tathlum",
         head="Aya. Zucchetto +2",
         body="Ayanmo Corazza +2",
-        hands="Aya. Manopolas +2",
+        hands="Turms Mittens +1",
         legs="Aya. Cosciales +2",
-        feet="Aya. Gambieras +2",
+        feet="Turms Leggings +1",
         neck="Twilight Torque",
-        waist="Ioskeha Belt +1",
-        left_ear="Sherida Earring",
+        waist="Flume Belt",
+        left_ear="Eabani Earring",
         right_ear="Odnowa Earring +1",
         left_ring="Defending Ring",
         right_ring="Moonbeam Ring",
-        -- back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
         back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+        -- back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
     sets.IdleDT = sets.TP.DT

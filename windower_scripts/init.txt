@@ -50,6 +50,12 @@ consolebg position 15 50
 
 // *** ALLIANCE TARGET KEYS ***
 // This lets you push Alt+F1-6 and Ctrl+F1-6 to  to target Alliance members.
+//--  Mod  Description
+//--  ^    Ctrl
+//--  !    Alt
+//--  @    Win
+//--  #    Apps
+//--  ~    Shift
 bind ^f1 input /ta <a10>
 bind ^f2 input /ta <a11>
 bind ^f3 input /ta <a12>
@@ -63,10 +69,36 @@ bind !f4 input /ta <a23>
 bind !f5 input /ta <a24>
 bind !f6 input /ta <a25>
 
-
-
+// GENERAL MULTIBOX:  ------------------------------------------------------------
 alias sa send @all
+alias st sat allcommand
 
+// GS stuff:  --------------------------------------------------------------------
+alias ex gs export equip lua
+
+// SUPERWARP:  --------------------------------------------------------------------
 alias home send Nightsfury hp a Port Windurst mh
 alias norg send Nightsfury hp a Norg ah
+alias waah send Nightsfury hp a Western Adoulin ah
+alias cp send Nightsfury wp a Marjami Ravine 4
+
+// TELEPORTS / MOVEMENT:  --------------------------------------------------------
 alias ambu send Nightsfury hp a Mhaura
+alias ki send Nightsfury hp a Bhaflau Thickets
+alias ah send Nightsfury hp a Norg ah
+alias warp send @all equip Ring1 'Warp Ring'; wait 11; send @all input /item 'Warp Ring' <me>;
+alias mea send @all equip Ring1 'Dim. Ring (Mea)'; wait 11; send @all input /item 'Dim. Ring (Mea)' <me>;
+alias mount send Vretiel mount Crawler; wait .3; send Valentus mount Fenrir; wait .3; send @others follow Nightsfury; wait .3; send Nightsfury mount 'Spectral Chair';
+alias snkinvis send Valentus sneak Nightsfury; wait 5; send Valentus invisible Nightsfury; wait .3; send Vretiel sneak; wait 5; send Valentus sneak; wait 5; send Vretiel invisible; wait .3; send Valentus invisible;
+alias dropinvis send Nightsfury cancel Invisible; wait .3; send Vretiel cancel Invisible; wait .3; send Valentus cancel Invisible; 
+
+// PARTY CMDS:  ------------------------------------------------------------------
+alias groupme partycmd add Valentus; wait 2.5  partycmd add Vretiel;
+alias groupimmo partycmd add Immortui; wait 2.5; partycmd add Raionnokane; wait 2.5; partycmd add Supekku
+
+
+
+
+
+
+

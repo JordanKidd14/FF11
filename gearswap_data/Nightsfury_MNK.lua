@@ -421,18 +421,18 @@ function init_gear_sets()
 
     sets.defense.MDT = {
         ammo="Staunch Tathlum",
-        head="Skormoth Mask",
-        body="Emet Harness",
+        head="Mummu Bonnet +1",
+        body="Ken. Samue +1",
         hands="Malignance Gloves",
         legs="Mummu Kecks +2",
         feet="Malignance Boots",
-        neck="Twilight Torque",
+        neck={ name="Mnk. Nodowa +1", augments={'Path: A',}},
         waist="Moonbow Belt +1",
-        left_ear="Sherida Earring",
-        right_ear="Odnowa Earring +1",
-        left_ring="Vocane Ring",
-        right_ring="Defending Ring",
-        back="Solemnity Cape",
+        left_ear="Odnowa Earring +1",
+        right_ear="Sherida Earring",
+        left_ring="Defending Ring",
+        right_ring="Gere Ring",
+        back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','System: 1 ID: 640 Val: 4',}},
     }
 
     sets.Kiting = {
@@ -461,7 +461,7 @@ function init_gear_sets()
         body="Ken. Samue +1",
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-        feet="Anch. Gaiters +2",
+        feet="Malignance Boots",
         neck="Mnk. Nodowa +1",
         waist="Moonbow Belt +1",
         left_ear="Cessance Earring",
